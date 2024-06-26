@@ -180,13 +180,13 @@ h2 {
 }
 
 .about-sections {
-    background-color: #f3f3f3; 
     display: inline-block;
     margin: 40px;
     padding: 30px;
     height: 75vh;
     border-radius: 20px;
-    box-shadow: 0.5px 0.5px 20px 1px gray;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 
@@ -215,15 +215,23 @@ h2 {
 
 #skills {
     background-color: blue;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
 #skills-container {
     display: flex;
+    justify-content: center; 
+    align-items: center; 
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Hides scrollbar in Firefox */
     -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer 10+ */
+    background-color: #fff;
+    height: 75vh;
+    width: 90%;
 }
 
 #skills-container::-webkit-scrollbar {
@@ -231,7 +239,24 @@ h2 {
     height: 0;
 }
 
+.title-container {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border: 1px solid green;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
 
+.title-contents {
+    display: none;
+    background-color: green;
+    color: #fff;
+}
+
+/*
+Temp, I have to put this aside for now to work on the goal.
 #soft-skills, .service-container {
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -251,13 +276,8 @@ h2 {
     text-align: center;
     margin: 5px;
 }
+*/ 
 
-
-
-/*
-#soft-skills p:first-child, .service-container p:first-child {
-    font-size: 2rem;
-} */ 
 
 /* Skills Ends */
 
