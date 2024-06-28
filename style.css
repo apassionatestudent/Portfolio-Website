@@ -69,7 +69,7 @@ nav ul li a#hireMe:hover, nav ul li a#hireMe.active {
     color: #2d2d2d;
 } */
 
-#hireMe:hover, #hireMe.active {
+#hireMe:hover, #hireMe.active-navigation {
     border-bottom: none;
     border-radius: 10px;
     background-color: yellow;
@@ -100,7 +100,7 @@ nav ul li a.nav-selection:hover {
     padding: 10px;
 }
 
-.active { 
+.active-navigation { 
     border-radius: 10px;
     background-color: #efefef;
     color: #24345f;
@@ -232,11 +232,19 @@ h2 {
     background-color: #fff;
     height: 75vh;
     width: 90%;
+    border-radius: 20px;
 }
 
 #skills-container::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+
+.skills-images {
+    width: 50%; height: 50%;
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid rgb(69, 69, 69);
 }
 
 .title-container {
@@ -247,6 +255,10 @@ h2 {
     height: 100%;
     width: 50%;
     text-align: center;
+    cursor: pointer;
+}
+
+.title-container.active {
 }
 
 .title-contents {

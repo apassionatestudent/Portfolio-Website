@@ -26,11 +26,11 @@ for (let i = 0; i < navSelection.length; i++) {
       event.preventDefault();
     }
 
-    let activeElements = document.querySelectorAll(".active");
+    let activeElements = document.querySelectorAll(".active-navigation");
     activeElements.forEach(function(el) {
-        el.classList.remove("active");
+        el.classList.remove("active-navigation");
     });
-    this.classList.add("active");
+    this.classList.add("active-navigation");
     
     preventActiveRemoval = true;
     setTimeout(() => {
@@ -137,17 +137,17 @@ window.addEventListener('scroll', function() {
      let refElement = document.querySelector(currLink.getAttribute('href'));
      if (refElement.offsetTop <= scrollTop && (refElement.offsetTop + refElement.offsetHeight > scrollTop)) {
        document.querySelectorAll('#navbar ul li a').forEach(function(link) {
-         link.classList.remove('active');
+         link.classList.remove('active-navigation');
        });
-       currLink.classList.add('active');
+       currLink.classList.add('active-navigation');
 
      } else if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
       // If the user has scrolled to the bottom of the page, add the.active class to the "Hire Me" link
       document.querySelectorAll('nav ul li a').forEach(function(link) {
-        link.classList.remove("active");
-        document.querySelector('#hireMe').classList.add("active");
+        link.classList.remove("active-navigation");
+        document.querySelector('#hireMe').classList.add("active-navigation");
       });
-      document.querySelector('#hireMe').classList.add("active");
+      document.querySelector('#hireMe').classList.add("active-navigation");
    }else {
        currLink.classList.remove("active");
      }
