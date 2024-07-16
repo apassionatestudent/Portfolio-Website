@@ -174,6 +174,45 @@ window.addEventListener('scroll', function() {
 
 // Skills Section Starts 
 
+/*
+const titleContainers = document.querySelectorAll('.title-container');
+const skillsContainer = document.querySelector('#skills-container');
+
+// hover over and highlight contents 
+
+titleContainers.forEach((container) => {
+  const contentElement = container.nextElementSibling;
+
+  if (contentElement && contentElement.classList.contains('title-contents')) {
+    container.addEventListener('mouseover', () => {
+      contentElement.style.display = 'block';
+    });
+
+    container.addEventListener('mouseout', () => {
+      contentElement.style.display = 'none';
+    });
+  }
+});  */
+const titleContainers = document.querySelectorAll('.title-container');
+const skillsContainer = document.querySelector('#skills-container');
+const contentElement = container.nextElementSibling;
+
+
+titleContainers.forEach((container) => {
+  container.addEventListener('mouseover', () => {
+    contentElement.style.display = 'block';
+    container.classList.add('expanded'); // Add expanded class
+  });
+
+  container.addEventListener('mouseout', () => {
+    contentElement.style.display = 'none';s
+    container.classList.remove('expanded'); // Remove expanded class
+  });
+});
+
+
+
+
 // Skills Secton Ends 
 
 

@@ -215,20 +215,21 @@ h2 {
 
 #skills {
     background-color: blue;
-    display: flex;
+    display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
+/* 
 #skills-container {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer 10+ */
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    overflow-y:visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
     background-color: #fff;
     height: 75vh;
     width: 90%;
@@ -258,11 +259,80 @@ h2 {
     cursor: pointer;
 }
 
-.title-container.active {
+.title-contents {
+    display: none;
+    height: 100%;
+    width: 70%; 
+    padding: 10px;
+    margin: 5px;
+    background-color: green;
+    color: #fff;
+} */
+
+#skills-container {
+    display: flex;
+    /*justify-content: center;  test, to be checked later*/
+    align-items: center; 
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer 10+ */
+    background-color: #fff;
+    height: 75vh;
+    width: 90%;
+    border-radius: 20px;
+}
+
+#skills-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.skills-images {
+    width: 50%; height: 50%;
+    display: inline-flex; /* Changed to flex */
+    flex-grow: 1; /* Allow to grow */
+    border-radius: 50%;
+    border: 3px solid rgb(69, 69, 69);
+}
+
+.title-container {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border: 1px solid green;
+    height: 100%;
+    width: 50%; 
+    text-align: center;
+    cursor: pointer;
+}
+
+.title-container:hover {
+    text-shadow: 1px 1px #ffff00;
+    transition: 0.3s;
+}
+
+/* 
+.title-container:hover#soft-skills {
+    color: #ff827a;
+}
+
+.title-container:hover#customer-service-specialist {
+    color: #fff962;
+    text-shadow: 1px 1px orange;
+}
+*/
+
+.title-container.expanded { /* New class for expanded state */
+    flex-grow: 1; /* Grow to fill available space */
 }
 
 .title-contents {
     display: none;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
     background-color: green;
     color: #fff;
 }
@@ -300,6 +370,8 @@ Temp, I have to put this aside for now to work on the goal.
     background-color: #343434;
     height: 100vh; 
     position: relative;
+    align-items: center;
+    display: flex;
 }
 
 
@@ -327,13 +399,51 @@ Temp, I have to put this aside for now to work on the goal.
     background-color: red;
 }
 
+.projects {
+    display: inline-block;
+    margin: 3px;
+    background-color: #fff;
+    color: #000;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #contact-links {
     right: 20px;
     background-color: blue;
 }
 
 #contact-links a {
+    color: #fff;
+    text-decoration:  none;
+}
+
+#contact-links ul li {
+    margin: 3px;
+    list-style-type: none;
+}
+
+#cv {
+    background-color: rgb(255, 162, 0);
+    border-radius: 5px;
+}
+
+.contact-icons {
     display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#ojph-icon {
+    background-image: url(Pictures/OJPHIcon.png);
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px; 
+    height: 20px; 
+    margin-left: 7px;
 }
 
 #copyright {
