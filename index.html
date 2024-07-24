@@ -12,7 +12,7 @@
 
     <link rel="icon" href="#" /> 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <meta charset="UTF-8" />
     <meta name="keywords" content="Ricson Escalicas, PH customer service specialist, PH general/executive virtual assistant, PH freelancer, PH sales caller, PH front-end web developer" />
@@ -25,38 +25,59 @@
 <body>
 
     <nav id="navbar">
+        
+        <p id="hamburger-menu" style="float: left;" onclick="openHamburger()">
+            ☰
+        </p> 
+
+        <div id="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeHamburger()">&times;</a>
+            <a href="#home" class="nav-selection hamburger">Home</a>
+            <a href="#about" class="nav-selection hamburger">About</a>
+            <a href="#skills" class="nav-selection hamburger">Skills</a>
+            <a href="#hire-me" class="nav-selection hamburger" id="hireMe">Hire Me</a>
+        </div>
+        
+        
+        
+
         <ul> 
             <li> <a href="#home" class="nav-selection">Home</a> </li>
             <li> <a href="#about" class="nav-selection">About</a>  </li>
             <li> <a href="#skills" class="nav-selection">Skills</a> </li>
-            <li> <a href="#hire-me" class="nav-selection" id="hireMe">Hire Me</a> </li>            
+            <li> <a href="#hire-me" class="nav-selection" id="hireMe">Hire Me</a> </li>  
+            <li>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </li>     
         </ul>
+        
     </nav>
 
     <!-- Home Starts -->
-    <article id="home">
+    <section id="home">
 
         <div id="profile-container"> 
                 <img src="Pictures/Profile.png" alt="Image of Ricson Escalicas" width="15%" height="15%" id="image-container">
                 <!-- I have to put my picture here -->
             <h1>Ricson B. Escalicas</h1>
+            <h2>Virtual Assistant</h2>
+            <br />
             <h2 id="message">PERSEVERANCE, CONSISTENCY, AND HARD WORK ARE BUILDING BLOCKS OF SUCCESS!</h2>
         </div>
 
-    </article>
+    </section>
     <!-- Home Ends -->
 
-    <div id="#" class="content-borders">
-        <br /> <br />
-    </div>
-
     <!-- About Starts -->
-    <article id="about">
+    <section id="about">
         <br /> <br/> 
                 
-        <section class="about-flex-container"> 
+        <div class="about-flex-container"> 
 
-            <section class="about-sections" id="personal-details">
+            <div class="about-sections" id="personal-details">
 
                 <img class="about-images" src="Pictures/AboutMeIcon.png" alt="" />
 
@@ -65,11 +86,9 @@
                 <p>Hi there! My name is Ricson B. Escalicas. I'm a virtual assistant from Cebu, Philippines. I believe in a saying that "How you do anything is how you do everything." I always do my best in everything that I do. I work on improving myself along with my Core Values (My Character), Vision (The Man I Envsion To Be), and Mission (My Deemed Purpose In Life) collectively known as the Basis or just simply who I am as a person. With these clear goals in mind, I plan the things that I want to do and work on those plans every day!</p>
                 <br />
                 <p>Although the future in itself is unpredictable, it's becoming apparent through the consistent steps we take at the present moment, if God willing. I hope that one day, I'd be able to reach most if not all of my goals, so long as I act consistently and do the things I said to myself. </p>
-            </section>
-    
-    
-            <section class="about-sections" id="professional-background">
+            </div>
 
+            <div class="about-sections" id="professional-background">
                 <img class="about-images" src="Pictures/ProfessionalBackgroundIcon.png" alt="" />
 
                 <p class="about-titles">Professional Background</p> <br/>
@@ -77,11 +96,9 @@
                 <p>As a results-oriented and versatile professional, I have over two years of experience in diverse roles. I have honed my skills to provide tailored support that aligns with the unique goals and challenges of my clients. My expertise extends to leadership, collaboration, and cultivating a harmonious team environment that consistently achieves exceptional outcomes. I thrive on adapting to dynamic situations and delivering outstanding results.</p>
                 <br />
                 <p>My professional journey has equipped me with the versatility to excel in various roles, demonstrating professionalism, attention to detail, and a commitment to delivering results. I am enthusiastic to bring my diverse skills and unwavering dedication to the team, contributing to the organization's success and ensuring the highest levels of customer satisfaction.</p>
-            </section>
+            </div>
     
-    
-            <section class="about-sections" id="hobbies">
-
+            <div class="about-sections" id="hobbies">
                 <img class="about-images" src="Pictures/HobbiesIcon.png" alt="" />
 
                 <p class="about-titles">Hobbies</p> <br/>
@@ -89,185 +106,262 @@
                 <p>I'm a person that always seek knowledge and I'm interested to it. So, I usually do some self-studies to improve myself especially outside of work. The said studies are often related to my long-term goals. The process of researching, analyzing, and gaining new insights are mentally stimulating and rewarding. This gives me a sense of accomplishment knowing that I'm working on my goals one at a time.</p>
                 <br />
                 <p>The things that fit my interest are web' dev', languages (currently Spanish and Portuguese), computer networking, fighting (self-defense), first aid, finances, etc. I also review my weekly progress to see if I'm still align with my goals or I'm slowing swaying away. In such way, I'd be ensure that I'm still working on my goals as much as possible.</p>
-            </section>
+            </div>
+            
 
-        </section>
+        </div>
 
-    </article>
+    </section>
     <!-- About Ends -->
 
-    <div id="#" class="content-borders">
-        <br /> <br />
-    </div>
-
     <!-- Skills Starts -->
-    <article id="skills" class="major-sections">
+    <section id="skills" class="major-sections">
         <br /> <br />
         
-        <section id="skills-container">
-            <section id="soft-skills" class="title-container">
+        <div id="skills-container">
+            <div id="soft-skills" class="title-container" onclick="showContent('soft-skills-content')">
 
-                <section>
+                <div>
                     <img src="Pictures/SoftSkillsIcon.png" alt="Ricson's Soft Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Soft Skills</p>
-                </section>
+                </div>
         
-            </section>
-            <section id="soft-skills-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-    
-            <section id="customer-service-specialist" class="title-container">
+            </div>
+            <div id="soft-skills-content" class="title-contents">
 
-                <section>
+                <div class="modal-containers">
+                    <div class="modal-title-containers" id="bg-soft-skills">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">Soft Skills</p>
+                    </div>
+                    
+                    <br />
+
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+    
+            <div id="customer-service-specialist" class="title-container" onclick="showContent('customer-service-specialist-content')" >
+
+                <div>
                     <img src="Pictures/CustomerServiceIcon.png" alt="Ricson's Customer Service Specialist Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Customer Service Specialist</p>
-                </section>
-            </section>
-            <section id="customer-service-specialist-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-            
-            <section id="general-virtual-assistant" class="title-container">
+                </div>
 
-                <section>
+            </div>
+            <div id="customer-service-specialist-content" class="title-contents">
+                <div class="modal-containers">
+                    <div class="modal-title-containers" id="bg-customer-service-specialist">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">Customer Service Specialist</p>
+                    </div>
+                    
+                    <br />
+
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="general-virtual-assistant" class="title-container" onclick="showContent('general-virtual-assistant-content')">
+
+                <div>
                     <img src="Pictures/GeneralVirtualAssistantIcon.png" alt="Ricson's General Virtual Assistant Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">General Virtual Assistant</p>
-                </section>
-            </section>
-            <section id="general-virtual-assistant-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-    
-            <section id="executive-virtual-assistant" class="title-container">
+                </div>
+            </div>
+            <div id="general-virtual-assistant-content" class="title-contents">
+                <div class="modal-containers" id="bg-general-virtual-assistant">
+                    <div class="modal-title-containers" id="bg-general-virtual-assistant">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">General Virtual Assistant</p>
+                    </div>
+                    
+                    <br />
 
-                <section>
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+    
+            <div id="executive-virtual-assistant" class="title-container" onclick="showContent('executive-virtual-assistant-content')">
+
+                <div>
                     <img src="Pictures/ExecutiveVirtualAssistantIcon.png" alt="Ricson's Executive Virtual Assistant Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Executive Virtual Assistant</p>
-                </section>
-            </section>
-            <section id="executive-virtual-assistant-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
+                </div>
+            </div>
+            <div id="executive-virtual-assistant-content" class="title-contents">
+                <div class="modal-containers">
+                    <div class="modal-title-containers" id="bg-executive-virtual-assistant">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">Executive Virtual Assistant</p>
+                    </div>
+                    
+                    <br />
+
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+
+            </div>
     
-            <section id="sales-calling" class="title-container">
-                <section>
+            <div id="sales-calling" class="title-container" onclick="showContent('sales-calling-content')">
+                <div>
                     <img src="Pictures/SalesIcon.png" alt="Ricson's Sales Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Sales Calling</p>
-                </section>
-            </section>
-            <section id="sales-calling-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
+                </div>
+            </div>
+            <div id="sales-calling-content" class="title-contents">
+                <div class="modal-containers">
+                    <div class="modal-title-containers" id="bg-sales-calling">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">Sales Calling</p>
+                    </div>
+                    
+                    <br />
+
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+                </div>
+
+            </div>
     
-            <section id="front-end-web" class="title-container">
-                <section>
+            <div id="front-end-web" class="title-container" onclick="showContent('front-end-web-content')" style="transition: 0.5s;">
+                <div>
                     <img src="Pictures/FrontEndWebIcon.png" alt="Ricson's Front-end Web Development Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Front-end Web Development</p>
-                </section>
-            </section>
-            <section id="front-end-web-content" class="title-contents">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+            <div id="front-end-web-content" class="title-contents">
+                <div class="modal-containers">
+                    <div class="modal-title-containers" id="bg-front-end">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p class="modal-titles">Front-End Web Development</p>
+                    </div>
+                    
+                    <br />
 
-            </section>
- 
-        </section>
+                    <div class="modal-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
 
-    </article>
+            </div>
+        </div>
+
+    </section>
     <!-- Skills Ends -->
-
-    <div id="#" class="content-borders">
-        <br /> <br /> 
-        <!-- <br /> <br /> <br /> -->
-    </div>
 
     <!-- Footer Starts -->
     <footer id="hire-me" class="major-sections">
-        <br /> <br />
 
-        <section id="hire-me-container">
+        <div id="get-in-touch-container">
+            <p id="get-in-touch">Get In Touch</p>
+            <p id="get-in-touch-msg">Excited to work with me? Let's talk about how I can help.</p>
+        </div>
+            <br />
+            <div id="contact-container">
 
-            <section id="hire-me-msg">
-                <p>Thank you for visiting. I hope you enjoyed your stay here.</p>
-                <br />
-                <p>I'd like to venture more into the VA world and that's why I created this website from scratch using HTML, CSS, and JavaScript. I want to showcase the services, skill set, and the value that I can provide to my potential clients.</p>
-                <br />
-                <p>You can go ahead and contact me for work, collaboration, or just saying hi. I look forward into it. </p>
-                <br />
-                <p id="works-title">Some of My Works:</p>
-                <p><span class="projects">Web Dev 2020</span> <span class="projects">Grading System</span> <span class="projects">Food Ordering System</span> <span class="projects">Scheduling</span> <span class="projects">Tools Database</span></p>
-            </section>
+                <div id="hire-me-msg">
+
+                    <p id="hi-there"> Hi there!</p>
+
+                    <div id="msg-container">
+                        <p>Thank you for visiting. I hope you enjoyed your stay here.</p>
+                        <br />
+                        <p>I'd like to venture more into the VA world and that's why I created this website from scratch using HTML, CSS, and JavaScript. I want to showcase the services, skill set, and the value that I can provide to my potential clients.</p>
+                        <br />
+                        <p>You can go ahead and contact me for work, collaboration, or just saying hi. I look forward into it. </p>
+                    </div>
+                    
+                    <br />
+                    
+                    <div id="projects-container">
+                        <p id="works-title">Some of My Works:</p>
+                        <p><span class="projects">Web Dev 2020</span> <span class="projects">Grading System</span> <span class="projects">Food Ordering Form</span> <span class="projects">Scheduling</span> <span class="projects">Tools Database</span></p>
+                    </div>
+                </div>
+        
+                <div id="contact-links">
+
+                    <p id="contact-me">Contact Me</p>
+                
+                    <p id="cv" class="contact-routes">                                   
+                        <a href="#" target="_blank"> <span class="contact-icons">Curriculum Vitae:</span> Take a look on my CV!</a>
+                    </p>
+ 
+                    <p id="phone" class="contact-routes">
+                        <a href="#" target="_blank"> <span class="contact-icons">Phone:</span> (+63) 943-818-4072 </a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="whatsapp" class="contact-routes">
+                        <a href="#" target="_blank"> <span class="contact-icons">Whatsapp:</span>  (+63) 943-818-4072 </a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="email" class="contact-routes">             
+                        <a href="mailto:ricson.escalicas@gmail.com" target="_blank"> <span class="contact-icons">Email:</span> ricson.escalicas@gmail.com </a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="skype" class="contact-routes">
+                                              
+                        <a href="live:.cid.3c3352f6ea6b089b" target="_blank"> <span class="contact-icons">Skype:</span> Ricson Escalicas </a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="linkedin" class="contact-routes">
+                        <a href="#" target="_blank"> <span class="contact-icons">LinkedIn:</span> Ricson Escalicas </a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="facebook" class="contact-routes">
+                        <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank"> <span class="contact-icons">Facebook:</span> Ricson Escalicas</a>
+                        <span class="copy">Copy</span>
+                    </p>
+
+                    <p id="online-jobs-ph" class="contact-routes">
+                        <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank"> <span class="contact-icons">Online Jobs PH:</span>  Ricson Escalicas</a>
+                        <span class="copy">Copy</span>
+                    </p>
     
-            <section id="contact-links">
-            
-                <ul>
-                    <li id="cv">
-                        <i class="fa fa-file contact-icons" aria-hidden="true"></i>                       
-                        <a href="#" target="_blank">Curriculum Vitae</a>
-                    </li>
+                </div>
+            </div>
 
-                    <li>
-                        <i class="fa fa-phone contact-icons" aria-hidden="true"></i>                       
-                        <a href="#" target="_blank">(+63) 943-818-4072</a>
-                    </li>
-
-                    <li>
-                        <i class="fa fa-whatsapp contact-icons" aria-hidden="true"></i>
-                        <a href="#" target="_blank">(+63) 943-818-4072</a>
-                    </li>
-
-                    <li>
-                        <i class="fa fa-envelope contact-icons" aria-hidden="true"></i>                      
-                        <a href="mailto:ricson.escalicas@gmail.com" target="_blank">ricson.escalicas@gmail.com</a>
-                    </li>
-
-                    <li>
-                        <i class="fa fa-skype contact-icons" aria-hidden="true"></i>                      
-                        <a href="live:.cid.3c3352f6ea6b089b" target="_blank">Ricson Escalicas</a>
-                    </li>
-
-                    <li>
-                        <i class="fa fa-linkedin contact-icons" aria-hidden="true"></i>                      
-                        <a href="#" target="_blank">Ricson Escalicas</a>
-                    </li>
-
-                    <li>
-                        <i class="fa fa-facebook-f contact-icons" aria-hidden="true"></i>                      
-                        <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank">Ricson Escalicas</a>
-                    </li>
-
-                    <li>
-                        <i id="ojph-icon" aria-hidden="true"></i>                      
-                        <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank">Ricson Escalicas</a>
-                    </li>
-                </ul>
-
-            </section>
-
-        </section>
-
-        <section id="copyright">
+        <div id="copyright">
             <p>© Copyright 2024 <span class="copyright-ricson">Ricson Escalicas</span>. Designed by <span class="copyright-ricson">Ricson</span>.</p>
-        </section>
+        </div>
 
     </footer>
     <!-- Footer Ends -->
 
-    <script src="app.js">
-
-    </script>
+    <script src="app.js"></script>
 
     <noscript>
     For full functionality of this site it is necessary to enable JavaScript.
     Here are the <a href="https://www.enable-javascript.com/">
     instructions how to enable JavaScript in your web browser</a>.
-   </noscript>
+    </noscript>
 
 </body>
 

@@ -1,5 +1,4 @@
-
-// Navigation Section Starts 
+// NAVIGATION SECTIONS STARTS
 
 // navigation fade effect on top 
 const nav = document.getElementById('navbar'); 
@@ -15,113 +14,51 @@ const nav = document.getElementById('navbar');
     }
 }
 
-const navSelection = document.getElementsByClassName("nav-selection");
-// Flag to prevent immediate removal of active class on scroll
-let preventActiveRemoval = false;
+// highlights nav links a, if a section covers 80% of the screen 
+document.addEventListener('DOMContentLoaded', () => {
+  const navSelection = document.getElementsByClassName("nav-selection");
+  const sections = ['home', 'about', 'skills', 'hire-me'];
 
-for (let i = 0; i < navSelection.length; i++) {
-  navSelection[i].addEventListener('click', function(event) { 
+  function setActiveNavigation() {
+      let currentSection = null;
 
-    if (this.tagName === 'A') {
-      event.preventDefault();
-    }
-
-    let activeElements = document.querySelectorAll(".active-navigation");
-    activeElements.forEach(function(el) {
-        el.classList.remove("active-navigation");
-    });
-    this.classList.add("active-navigation");
-    
-    preventActiveRemoval = true;
-    setTimeout(() => {
-      preventActiveRemoval = false;
-    }, 1000); // Reset the flag after a short delay
-    
-    const targetSection = document.querySelector(this.getAttribute('href'));
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
-
-/*
-window.addEventListener('scroll', function() {
-  if (preventActiveRemoval) return; // Exit if the flag is true
- 
-  // Use the cross-browser compatible method to get the scroll position
-  let scrollTop = document.documentElement.scrollTop  
-             || document.body.scrollTop  
-             || 0;
- 
-  let navLinks = document.querySelectorAll('#navbar ul li a');
-  navLinks.forEach(function(currLink) {
-     let refElement = document.querySelector(currLink.getAttribute('href'));
-     if (refElement.offsetTop <= scrollTop && (refElement.offsetTop + refElement.offsetHeight > scrollTop)) {
-       document.querySelectorAll('#navbar ul li a').forEach(function(link) {
-         link.classList.remove('active');
-       });
-       currLink.classList.add('active');
-
-     } else if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
-      // If the user has scrolled to the bottom of the page, add the.active class to the "Hire Me" link
-      document.querySelectorAll('nav ul li a').forEach(function(link) {
-        link.classList.remove("active");
-        document.querySelector('#hireMe').classList.add("active");
-      });
-      document.querySelector('#hireMe').classList.add("active");
-   }else {
-       currLink.classList.remove("active");
-     }
-  });
- });  */
-
- /* 
- window.addEventListener('scroll', function() {
-  if (preventActiveRemoval) return; // Exit if the flag is true
-
-  // Use the cross-browser compatible method to get the scroll position
-  let scrollTop = document.documentElement.scrollTop  
-             || document.body.scrollTop  
-             || 0;
-
-  let navLinks = document.querySelectorAll('#navbar ul li a');
-  navLinks.forEach(function(currLink) {
-    let refElement = document.querySelector(currLink.getAttribute('href'));
-    if (refElement) { // Check if refElement exists
-      let isVisible = false;
-      const threshold = 0.7; // 70% visibility threshold
-      const elementTop = refElement.getBoundingClientRect().top;
-      const elementBottom = refElement.getBoundingClientRect().bottom;
-      const viewportHeight = window.innerHeight;
-
-      // Calculate if the element is at least partially visible
-      if ((elementTop >= 0) && (elementBottom <= viewportHeight)) {
-        isVisible = true;
-      } else if (((elementTop < 0) && (elementBottom > 0)) || ((elementTop > 0) && (elementBottom < viewportHeight))) {
-        // Element is partially visible
-        const visiblePercentage = Math.min(1, Math.max((viewportHeight - Math.abs(elementTop)), (viewportHeight - Math.abs(elementBottom)))) / viewportHeight;
-        isVisible = visiblePercentage >= threshold;
+      // Check if the scroll position is at the top of the document => remove active-navigation for home only
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollPosition === 0) {
+        // Remove the active-navigation class from all nav items
+        for (let i = 0; i < navSelection.length; i++) {
+            navSelection[i].classList.remove("active-navigation");
+        }
+        return; // Exit the function early since we've handled the top case
       }
 
-      if (isVisible) {
-        document.querySelectorAll('#navbar ul li a').forEach(function(link) {
-          link.classList.remove('active');
-        });
-        currLink.classList.add('active');
-      } else {
-        currLink.classList.remove("active");
-      }
-    }
-  });
+      for (let i = 0; i < sections.length; i++) {
+          const section = document.getElementById(sections[i]);
+          const rect = section.getBoundingClientRect();
 
-  // Additional logic for highlighting the "Hire Me" link when scrolling to the bottom
-  if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
-    document.querySelectorAll('nav ul li a').forEach(function(link) {
-      link.classList.remove("active");
-    });
-    document.querySelector('#hireMe').classList.add("active");
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2 * 0.8) {
+            currentSection = sections[i];
+            break;
+        }
+          /* 70% version
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+              currentSection = sections[i];
+              break;
+          } */
+      }
+
+      for (let i = 0; i < navSelection.length; i++) {
+          if (navSelection[i].getAttribute('href').slice(1) === currentSection) {
+              navSelection[i].classList.add("active-navigation");
+          } else {
+              navSelection[i].classList.remove("active-navigation");
+          }
+      }
   }
-}); */ 
+
+  window.addEventListener('scroll', setActiveNavigation);
+  setActiveNavigation(); // Initialize on page load
+});
 
 
 window.addEventListener('scroll', function() {
@@ -154,70 +91,148 @@ window.addEventListener('scroll', function() {
   });
  }); 
 
-
-
-
-// Navigation Section Ends  
-
-
-// Home Section Starts 
-
-
-
-// Home Section Ends 
-
-
-// About Section Starts 
-
-// About Section  Ends 
-
-
-// Skills Section Starts 
-
 /*
-const titleContainers = document.querySelectorAll('.title-container');
-const skillsContainer = document.querySelector('#skills-container');
+ document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const slider = document.querySelector('.slider');
 
-// hover over and highlight contents 
-
-titleContainers.forEach((container) => {
-  const contentElement = container.nextElementSibling;
-
-  if (contentElement && contentElement.classList.contains('title-contents')) {
-    container.addEventListener('mouseover', () => {
-      contentElement.style.display = 'block';
-    });
-
-    container.addEventListener('mouseout', () => {
-      contentElement.style.display = 'none';
-    });
+  // Function to apply theme
+  function applyTheme(theme) {
+    document.documentElement.style.setProperty('--bg-color', theme.bgColor);
+    document.documentElement.style.setProperty('--text-color', theme.textColor);
   }
-});  */
-const titleContainers = document.querySelectorAll('.title-container');
-const skillsContainer = document.querySelector('#skills-container');
-const contentElement = container.nextElementSibling;
 
+  // Get local time and decide theme
+  const currentTime = new Date().getHours();
+  let theme;
+  if (currentTime >= 7 && currentTime <= 18) {
+    theme = { bgColor: '#fff', textColor: '#000' };
+  } else {
+    theme = { bgColor: '#000', textColor: '#fff' };
+  }
+  applyTheme(theme);
 
-titleContainers.forEach((container) => {
-  container.addEventListener('mouseover', () => {
-    contentElement.style.display = 'block';
-    container.classList.add('expanded'); // Add expanded class
+  // Toggle theme based on local time
+  setInterval(() => {
+    const currentTime = new Date().getHours();
+    if (currentTime >= 7 && currentTime <= 18) {
+      applyTheme({ bgColor: '#fff', textColor: '#000' });
+    } else {
+      applyTheme({ bgColor: '#000', textColor: '#fff' });
+    }
+  }, 3600000); // Check every hour
+
+  // Handle toggle switch
+  themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+      document.documentElement.setAttribute('class', 'night-theme');
+    } else {
+      document.documentElement.setAttribute('class', '');
+    }
   });
 
-  container.addEventListener('mouseout', () => {
-    contentElement.style.display = 'none';s
-    container.classList.remove('expanded'); // Remove expanded class
+  // Initialize theme based on saved preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'night') {
+    document.documentElement.setAttribute('class', 'night-theme');
+    themeToggle.checked = true;
+  }
+}); */
+
+// Hamburger Menu for responsiveness 
+
+function openHamburger() {
+  // document.getElementById("sidepanel").style.transform = "translateX(0)";
+  document.getElementById("sidepanel").style.width = "100%";
+  document.body.style.overflow = 'hidden'; // disenable scroll 
+}
+
+function closeHamburger() {
+  //document.getElementById("sidepanel").style.transform = "translateX(-100%)";
+
+  document.getElementById("sidepanel").style.width = "0px";
+  document.body.style.overflow = 'auto'; // re-enable scroll 
+}
+
+// Add event listeners to all links inside the side panel
+document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    // Prevent default action to avoid jumping to the top of the page
+    event.preventDefault();
+    
+    // Perform navigation programmatically
+    const href = this.getAttribute('href');
+    window.location.href = href;
+    
+    // Close the side panel
+    closeHamburger();
   });
 });
 
+// NAVIGATION SECTIONS ENDS
+
+// HOME SECTION STARTS
 
 
 
-// Skills Secton Ends 
+// HOME SECTION ENDS
 
 
-// Hire Me Section Starts 
+// ABOUT SECTION STARTS
 
 
-// Hire Me Section Ends 
+// ABOUT SECTION ENDS
 
+
+// SKILLS SECTION STARTS
+
+function showContent(elementId) {
+      let element = document.getElementById(elementId);
+      if (element) {
+          element.style.display = "block";
+          disableScroll();
+      }
+  }
+  
+  function closeModal() {
+      ['soft-skills-content', 'customer-service-specialist-content', 'general-virtual-assistant-content', 
+       'executive-virtual-assistant-content', 'sales-calling-content', 'front-end-web-content'].forEach(id => {
+          let element = document.getElementById(id);
+          if (element) {
+              element.style.display = "none";
+              enableScroll();
+          }
+      });
+  }
+
+  // disable scroll to ensure user doesn't move elsewhere from Skills section 
+function disableScroll() {
+  scrollTop = document.documentElement.scrollTop;
+  scrollLeft = document.documentElement.scrollLeft;
+  // if any scroll is attempted, set this to the previous value
+  window.onscroll = function() {
+  window.scrollTo(scrollLeft, scrollTop);
+  };
+}
+
+function enableScroll() {
+  window.onscroll = function() {
+    if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
+      // changes background upon scroll
+      nav.classList.add("navbar-colored");
+      nav.classList.remove("navbar-transparent");
+    } else {
+      nav.classList.add("navbar-transparent");
+      nav.classList.remove("navbar-colored");
+    }
+  };
+} 
+  
+
+// SKILLS SECTIONS ENDS
+
+
+// HIRE ME SECTION STARTS
+
+
+// HIRE ME SECTION ENDS

@@ -3,10 +3,11 @@
 * {
     margin: 0; 
     font-family: Arial, Helvetica, sans-serif;
+    color: #000;
 }
 
 body {
-    background-color: #24345f;
+    background-color: #282828;
 }
 
 html {
@@ -22,12 +23,6 @@ html {
     min-height: 100vh;
 }
 
-.content-borders {
-    height: 20%;
-    width: 100%; 
-    background-color: #000;
-}
-
 /* General Design Ends */
 
 
@@ -40,7 +35,7 @@ html {
     text-align: center;
     padding: 10px;
     transition: background-color 0.5s ease-in-out;
-    z-index: 20;
+    z-index: 5;
 }
 
 .navbar-colored {
@@ -61,14 +56,6 @@ nav ul li a#hireMe {
     border-bottom: 1px solid yellow;
 }
 
-/*
-nav ul li a#hireMe:hover, nav ul li a#hireMe.active {
-    border-bottom: none;
-    border-radius: 10px;
-    background-color: yellow;
-    color: #2d2d2d;
-} */
-
 #hireMe:hover, #hireMe.active-navigation {
     border-bottom: none;
     border-radius: 10px;
@@ -82,12 +69,6 @@ nav ul li a {
     padding: 10px;
     transition: 0.4s;
 }
-/*
-nav ul li a.nav-selection:hover {
-    border-radius: 10px;
-    background-color: #efefef;
-    color: #24345f;
-} */
 
 .nav-selection:hover {
     border-radius: 10px;
@@ -107,11 +88,133 @@ nav ul li a.nav-selection:hover {
     border-bottom: none;
 }
 
+/*
+:root {
+    --bg-color: white;
+    --text-color: black;
+  } */
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 25px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /*
+  .day-theme {
+    --bg-color: white;
+    --text-color: black;
+  } */
+  
+  /*
+  .night-theme {
+    --bg-color: black;
+    --text-color: white;
+  } */
 
+  #navbar ul li:last-child {
+    position: absolute;
+    right: 20px;
+} 
 
+/* Responsive Section - Navigation */
 
+#sidepanel {
+    height: 100vh;
+    width: 0px; 
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0; 
+    /*transform: translateX(-50%); */
+    transform: translateX(0%);
+    background-color: #dddddd; 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
 
-/* Navigation Ends */ 
+#sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#hamburger-menu {
+    color: #fff;
+    padding: 5px;
+    display: none;
+}
+
+.hamburger {
+    width: 50%;
+    margin: 10px;
+}
+
+/* NAVIGATION ENDS */ 
 
 /* Home Starts */ 
 
@@ -126,10 +229,6 @@ nav ul li a.nav-selection:hover {
     background-attachment: fixed;
 }
 
-#profile-container {
-    
-}
-
 #image-container {
     margin-top: 15%; /* stop-gap solution */
     display: block;
@@ -139,17 +238,19 @@ nav ul li a.nav-selection:hover {
     border: 2px solid rgb(1, 1, 227);
 }
 
-h1 {
+h1, h2 {
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    /*     text-shadow: 1px 1px #efefef; */ 
-    color: #f9f9f9;
-    font-size: 7vh;
-    padding: 5px; 
     text-align: center;
+    color: #f9f9f9;
 }
 
-h2 {
+h1 {
+    
+    font-size: 7vh;
+    padding: 5px; 
+}
+
+#message {
     font-size: 10px;
     margin: 0 auto;
     margin-bottom: 20%;
@@ -168,6 +269,7 @@ h2 {
 
 #about {
     background-color: #efefef;
+    /*background-color: #464646; */
 }
 
 .about-flex-container {
@@ -185,7 +287,10 @@ h2 {
     padding: 30px;
     height: 75vh;
     border-radius: 20px;
-    background: rgb(236, 236, 236);
+    /*
+    color: #fff;
+    background-color: #2e2e2e; - night */
+    background: rgb(236, 236, 236); 
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -198,7 +303,9 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
+
     border: 5px solid rgb(69, 69, 69); 
+    /*border: 5px solid rgb(247, 247, 247); -night */
 }
 
 .about-titles {
@@ -214,73 +321,30 @@ h2 {
 /* Skills Starts */ 
 
 #skills {
-    background-color: blue;
+    /*background-color: #464646; - night */
+    background-color: #efefef;
     display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
-/* 
 #skills-container {
     display: flex;
-    justify-content: center; 
     align-items: center; 
     flex-wrap: nowrap; 
-    overflow-x: auto; 
-    overflow-y:visible;
-    scrollbar-width: none;
-    -ms-overflow-style: none; 
-    background-color: #fff;
-    height: 75vh;
-    width: 90%;
-    border-radius: 20px;
-}
-
-#skills-container::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.skills-images {
-    width: 50%; height: 50%;
-    display: inline-block;
-    border-radius: 50%;
-    border: 3px solid rgb(69, 69, 69);
-}
-
-.title-container {
-    display: grid;
-    place-items: center;
-    padding: 10px;
-    border: 1px solid green;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    cursor: pointer;
-}
-
-.title-contents {
-    display: none;
-    height: 100%;
-    width: 70%; 
-    padding: 10px;
-    margin: 5px;
-    background-color: green;
-    color: #fff;
-} */
-
-#skills-container {
-    display: flex;
-    /*justify-content: center;  test, to be checked later*/
-    align-items: center; 
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    overflow-x: hidden;
+    /* overflow-x: auto; */ 
+    scrollbar-width: none; 
     -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer 10+ */
-    background-color: #fff;
     height: 75vh;
     width: 90%;
     border-radius: 20px;
+
+    /* - night
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
 }
 
 #skills-container::-webkit-scrollbar {
@@ -290,8 +354,8 @@ h2 {
 
 .skills-images {
     width: 50%; height: 50%;
-    display: inline-flex; /* Changed to flex */
-    flex-grow: 1; /* Allow to grow */
+    display: inline-flex; 
+    flex-grow: 1; 
     border-radius: 50%;
     border: 3px solid rgb(69, 69, 69);
 }
@@ -300,65 +364,134 @@ h2 {
     display: grid;
     place-items: center;
     padding: 10px;
-    border: 1px solid green;
-    height: 100%;
+    border: 1px solid #fff;
+    border-bottom: none;
+    height: 75vh;
     width: 50%; 
     text-align: center;
     cursor: pointer;
 }
 
+#soft-skills {
+    border-left: none;
+}
+
+#front-end-web {
+    border-right: none;
+}
+
 .title-container:hover {
-    text-shadow: 1px 1px #ffff00;
-    transition: 0.3s;
+    color: #fff;
+    transition: 0.5s;
 }
 
-/* 
-.title-container:hover#soft-skills {
-    color: #ff827a;
+.close {
+    color: #444444;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+  
+.close:hover, .close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.title-container:hover#customer-service-specialist {
-    color: #fff962;
-    text-shadow: 1px 1px orange;
+#soft-skills-content, #customer-service-specialist-content, #general-virtual-assistant-content, #executive-virtual-assistant-content,
+#sales-calling-content, #front-end-web-content {
+    display: none; 
+    position: fixed; 
+    z-index: 20; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
-*/
+
+
+.modal-containers {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #F5F5F5;
+}
+
+.modal-title-containers {
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid #000;
+}
+
+.modal-titles {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.modal-content {
+    padding: 15px;
+}
+
+#soft-skills:hover {
+    background-color: #ff827a;
+}
+
+#bg-soft-skills {
+    background-color: #ff827a;
+}
+
+#customer-service-specialist:hover {
+    background-color: #fff962;
+}
+
+#bg-customer-service-specialist {
+    background-color: #fff962;
+}
+
+#general-virtual-assistant:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+#bg-general-virtual-assistant {
+    background-color: #ffffff;
+}
+
+#executive-virtual-assistant:hover {
+    background-color: #38b6ff;
+}
+
+#bg-executive-virtual-assistant {
+    background-color: #38b6ff;
+}
+
+#sales-calling:hover {
+    background-color: #00f47e;
+}
+
+#bg-sales-calling {
+    background-color: #00f47e;
+}
+
+#front-end-web:hover {
+    background: linear-gradient(to right, #cdffd8, #94b9ff);
+}
+
+#bg-front-end {
+    background: linear-gradient(to right, #cdffd8, #94b9ff);
+}
+
 
 .title-container.expanded { /* New class for expanded state */
     flex-grow: 1; /* Grow to fill available space */
 }
-
-.title-contents {
-    display: none;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    margin: 5px;
-    background-color: green;
-    color: #fff;
-}
-
-/*
-Temp, I have to put this aside for now to work on the goal.
-#soft-skills, .service-container {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    background-color: #f3f3f3; 
-    display: inline-block;
-    margin: 40px;
-    padding: 30px;
-    height: 75vh;
-    width: 50vh;
-    border-radius: 20px;
-    box-shadow: 0.5px 0.5px 20px 1px gray;
-}
-
-.skills-titles {
-    font-size: 3vh;
-    font-weight: 700;
-    text-align: center;
-    margin: 5px;
-}
-*/ 
 
 
 /* Skills Ends */
@@ -367,73 +500,118 @@ Temp, I have to put this aside for now to work on the goal.
 
 /* Hire Me Starts */ 
 #hire-me {
-    background-color: #343434;
+    /*background-color: #343434; - night */
+    background-color: #e5e5e5;
     height: 100vh; 
     position: relative;
     align-items: center;
-    display: flex;
+    display: flex; 
+}
+
+#get-in-touch-container {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 6%;
+    margin-bottom: 10px;
+}
+
+#get-in-touch, #get-in-touch-msg {
+    /*color: #fff; -night */
+    color: #000; 
+}
+
+#get-in-touch {
+    font-size: 2rem;
 }
 
 
-#hire-me-container {
-    color: #fff;
-    margin: 0 auto;
-    width: 80%;
-    height: 50vh;
-    padding: 10vh;
-    background-color: #242424;
-    border-left: 5px solid yellow;
+#contact-container {
+    display: flex;
+    margin: 10%;
     position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
 } 
 
-#hire-me-msg, #contact-links {
-    position: absolute;
-    width: 40%;
-    height: 40vh;
-    margin: 10px;
-    padding: 40px;
+#msg-container, #projects-container {
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
+    /*border-radius: 5px; */
 }
 
-#hire-me-msg {
-    left: 20px;
-    background-color: red;
+#msg-container {
+    /* background-color: #ff6a00; -night */
+    background-color: #121212;
+    border-top: 2px solid orange; border-left: 2px solid orange;
 }
+
+#msg-container p, #projects-container p {
+    color: #efefef;   
+}
+
+#projects-container {
+    background-color: #121212;
+    border-bottom: 2px solid orange; border-right: 2px solid orange;
+}
+
+#hire-me-msg, #contact-links {
+    width: 50%;
+    padding: 20px;
+    /*background-color: rgb(36, 36, 36); -night */
+    /* border-left: 5px solid yellow; - night */
+    border-left: 5px solid #262626;
+    /*background-color: rgba(30, 30, 30, 0.9); */
+    background-color: rgba(239, 239, 239, 0.8);
+    /* color: #fff; */
+} 
 
 .projects {
     display: inline-block;
     margin: 3px;
     background-color: #fff;
-    color: #000;
     padding: 4px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#contact-links {
-    right: 20px;
-    background-color: blue;
-}
 
 #contact-links a {
     color: #fff;
     text-decoration:  none;
 }
 
-#contact-links ul li {
-    margin: 3px;
-    list-style-type: none;
-}
-
-#cv {
-    background-color: rgb(255, 162, 0);
-    border-radius: 5px;
-}
-
-.contact-icons {
-    display: inline-block;
+#hi-there, #contact-me {
+    font-size: 2rem;
     text-align: center;
+    margin: 10px;
+}
+
+.contact-routes {
+    border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255);
+    background-color: #e17d09;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
+}
+
+.contact-icons, .copy {
+    border-radius: 5px;
+    background-color: #2f3035; color: #efefef;
+    padding: 3px;
+}
+
+.copy {
+    margin-left: 0 auto;
+    transition: 0.3s;
+}
+
+.copy:hover {
+    background-color: yellow;
 }
 
 #ojph-icon {
@@ -453,11 +631,15 @@ Temp, I have to put this aside for now to work on the goal.
     display: inline-block;
     position: absolute;
     bottom: 0;
-    color: #fff;
     background-color: #282828;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#copyright p {
+    color: #fff !important;
+    /* it has to be specified, otherwise * selector will take over */
 }
 
 .copyright-ricson {
@@ -465,8 +647,124 @@ Temp, I have to put this aside for now to work on the goal.
 }
 
 
-
-
-
-
 /* Hire Me Ends */ 
+
+/* RESPONSIVE APPLICATIONS STARTS */
+
+@media only screen and (max-width: 600px) {
+    /* Styles for small devices go here */
+    
+    /* Responsive: Navigation Starts */
+        #hamburger-menu {
+            display: block;
+        }
+    
+        #navbar ul li a {
+            display: none;
+        }       
+
+    /* Responsive: Navigation Ends */
+
+
+    /* Responsive: Home Starts */
+
+    /* Responsive: Home Ends */
+
+
+    /* Responsive: About Starts */
+
+    /* Responsive: About Ends */
+
+    /* Responsive: Skills Starts */
+
+    /* Responsive: Skills Ends */
+
+
+    /* Responsive: Hire Starts */
+
+    /* Responsive: Hire Ends */
+}
+   
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    /* Styles for medium devices go here */
+
+    /* Responsive: Navigation Starts */
+
+    /* Responsive: Navigation Ends */
+
+
+    /* Responsive: Home Starts */
+
+    /* Responsive: Home Ends */
+
+
+    /* Responsive: About Starts */
+
+    /* Responsive: About Ends */
+
+    /* Responsive: Skills Starts */
+
+    /* Responsive: Skills Ends */
+
+
+    /* Responsive: Hire Starts */
+
+    /* Responsive: Hire Ends */
+}
+   
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    /* Styles for large devices go here */
+
+    /* Responsive: Navigation Starts */
+
+    /* Responsive: Navigation Ends */
+
+
+    /* Responsive: Home Starts */
+
+    /* Responsive: Home Ends */
+
+
+    /* Responsive: About Starts */
+
+    /* Responsive: About Ends */
+
+    /* Responsive: Skills Starts */
+
+    /* Responsive: Skills Ends */
+
+
+    /* Responsive: Hire Starts */
+
+    /* Responsive: Hire Ends */
+}
+   
+@media only screen and (min-width: 1201px) {
+    /* Styles for extra large devices go here */ 
+
+    /* Responsive: Navigation Starts */
+
+    /* Responsive: Navigation Ends */
+
+
+    /* Responsive: Home Starts */
+
+    /* Responsive: Home Ends */
+
+
+    /* Responsive: About Starts */
+
+    /* Responsive: About Ends */
+
+    /* Responsive: Skills Starts */
+
+    /* Responsive: Skills Ends */
+
+
+    /* Responsive: Hire Starts */
+
+    /* Responsive: Hire Ends */
+}
+   
+
+/* RESPONSIVE APPLICATIONS ENDS */
