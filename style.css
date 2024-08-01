@@ -800,6 +800,7 @@ h1 {
         height: 13.3%;
         border-left: none; border-right: none;
         display: flex;
+        justify-content: center;
         align-items: center; /* Optional: Aligns children vertically in the middle */
     }
 
