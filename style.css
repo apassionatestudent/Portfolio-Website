@@ -776,8 +776,8 @@ h1 {
     } 
     
     .about-sections {
-        width: 30vh;
-        margin: 15px;
+        width: 35vh;
+        margin: 18px;
     }
 
     .about-static {
@@ -822,7 +822,7 @@ h1 {
 
     .skill-specific {
         position: absolute;
-        margin-left: 10%; 
+        margin-left: 5%; 
         display: flex;
         align-items: center; 
         gap: 10px; 
