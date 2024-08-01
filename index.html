@@ -27,7 +27,7 @@
     <nav id="navbar">
         
         <p id="hamburger-menu" style="float: left;" onclick="openHamburger()">
-            ☰
+            ☰ <span id="hamburger-tooltip" class="tooltip" >Home</span>
         </p> 
 
         <div id="sidepanel">
@@ -60,7 +60,9 @@
     <section id="home">
 
         <div id="profile-container"> 
-                <img src="Pictures/Profile.png" alt="Image of Ricson Escalicas" width="15%" height="15%" id="image-container">
+                <!--<img src="Pictures/Profile.png" alt="Image of Ricson Escalicas" width="15%" height="15%" id="image-container"> -->
+
+                <img src="Pictures/Profile.png" alt="Image of Ricson Escalicas" id="image-container">
                 <!-- I have to put my picture here -->
             <h1>Ricson B. Escalicas</h1>
             <h2>Virtual Assistant</h2>
@@ -79,33 +81,44 @@
 
             <div class="about-sections" id="personal-details">
 
-                <img class="about-images" src="Pictures/AboutMeIcon.png" alt="" />
+                <div class="about-static">
+                    <img class="about-images" src="Pictures/AboutMeIcon.png" alt="" />
 
-                <p class="about-titles">About Me</p> <br/>
+                    <p class="about-titles">About Me</p> <br/>
+                </div>
 
                 <p>Hi there! My name is Ricson B. Escalicas. I'm a virtual assistant from Cebu, Philippines. I believe in a saying that "How you do anything is how you do everything." I always do my best in everything that I do. I work on improving myself along with my Core Values (My Character), Vision (The Man I Envsion To Be), and Mission (My Deemed Purpose In Life) collectively known as the Basis or just simply who I am as a person. With these clear goals in mind, I plan the things that I want to do and work on those plans every day!</p>
                 <br />
                 <p>Although the future in itself is unpredictable, it's becoming apparent through the consistent steps we take at the present moment, if God willing. I hope that one day, I'd be able to reach most if not all of my goals, so long as I act consistently and do the things I said to myself. </p>
+
             </div>
 
             <div class="about-sections" id="professional-background">
-                <img class="about-images" src="Pictures/ProfessionalBackgroundIcon.png" alt="" />
 
-                <p class="about-titles">Professional Background</p> <br/>
 
+                <div class="about-static">
+                    <img class="about-images" src="Pictures/ProfessionalBackgroundIcon.png" alt="" />
+
+                    <p class="about-titles">Professional Background</p> <br/>
+                </div>
                 <p>As a results-oriented and versatile professional, I have over two years of experience in diverse roles. I have honed my skills to provide tailored support that aligns with the unique goals and challenges of my clients. My expertise extends to leadership, collaboration, and cultivating a harmonious team environment that consistently achieves exceptional outcomes. I thrive on adapting to dynamic situations and delivering outstanding results.</p>
                 <br />
                 <p>My professional journey has equipped me with the versatility to excel in various roles, demonstrating professionalism, attention to detail, and a commitment to delivering results. I am enthusiastic to bring my diverse skills and unwavering dedication to the team, contributing to the organization's success and ensuring the highest levels of customer satisfaction.</p>
+                
             </div>
     
             <div class="about-sections" id="hobbies">
-                <img class="about-images" src="Pictures/HobbiesIcon.png" alt="" />
+                
+                <div class="about-static">
+                    <img class="about-images" src="Pictures/HobbiesIcon.png" alt="" />
 
-                <p class="about-titles">Hobbies</p> <br/>
+                    <p class="about-titles">Hobbies</p> <br/>
+                </div>
 
                 <p>I'm a person that always seek knowledge and I'm interested to it. So, I usually do some self-studies to improve myself especially outside of work. The said studies are often related to my long-term goals. The process of researching, analyzing, and gaining new insights are mentally stimulating and rewarding. This gives me a sense of accomplishment knowing that I'm working on my goals one at a time.</p>
                 <br />
                 <p>The things that fit my interest are web' dev', languages (currently Spanish and Portuguese), computer networking, fighting (self-defense), first aid, finances, etc. I also review my weekly progress to see if I'm still align with my goals or I'm slowing swaying away. In such way, I'd be ensure that I'm still working on my goals as much as possible.</p>
+                
             </div>
             
 
@@ -116,14 +129,13 @@
 
     <!-- Skills Starts -->
     <section id="skills" class="major-sections">
-        <br /> <br />
         
         <div id="skills-container">
             <div id="soft-skills" class="title-container" onclick="showContent('soft-skills-content')">
 
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/SoftSkillsIcon.png" alt="Ricson's Soft Skills" class="skills-images" />
-                    <br /> <br />
+                    <br /> <br /> 
                     <p class="skills-titles">Soft Skills</p>
                 </div>
         
@@ -136,10 +148,87 @@
                         <p class="modal-titles">Soft Skills</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Employers value strong soft skills because they contribute to a positive work environment and effective teamwork. Here are my soft skills that you may consider in your overall hiring decision:</p>
+                        <br /> <br />
+                        <p class="sub-content-title">Attention to Details & Active Listening</p> 
+                        <ul>
+                            <li>I am <span class="soft-skills-highlights">meticulous</span> in my approach to both personal and professional tasks, ensuring that no detail is overlooked.</li>
+                            <li>My active listening skills enable me to fully <span class="soft-skills-highlights">understand instructions or feedback</span>, allowing me to execute tasks accurately and efficiently.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Collaboration & Resourcefulness </p>
+                        <ul>
+                            <li>I excel at collaborating with others, particularly evident in my partnership with my best friend where we collectively build a comprehensive Tools Database. This resource showcases our shared collection of tools, including AI technologies, designed to enhance productivity and efficiency in our projects.</li>
+                            <li>Our collaboration demonstrates not only <span class="soft-skills-highlights">teamwork</span> but also <span class="soft-skills-highlights">resourcefulness</span> in leveraging each other's expertise and ideas.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Critical Thinking & Problem-Solving</p>
+                        <ul>
+                            <li>As a front-end web developer, encountering unexpected coding challenges is part of the job. Instead of being deterred, I employ <span class="soft-skills-highlights">critical thinking</span> and <span class="soft-skills-highlights">problem-solving skills</span> to navigate through these obstacles.</li>
+                            <li>My ability to think creatively has been instrumental in <span class="soft-skills-highlights">finding solutions</span> not only within the realm of web development but also in addressing broader life challenges. This mindset ensures that I remain resilient and adaptable in facing any issue that arises.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Discretion and Confidentiality</p>
+                        <ul>
+                            <li>I uphold high standards of <span class="soft-skills-highlights">discretion</span> and <span class="soft-skills-highlights">confidentiality</span> in all aspects of my work and personal interactions. </li>
+                            <li>Recognizing the importance of protecting sensitive information, I ensure that confidential details are handled with utmost care and shared only with those who have a legitimate need to know.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Goal-Oriented</p>
+                        <ul>
+                            <li>I am highly goal-oriented, dedicating <span class="soft-skills-highlights">significant effort</span> towards achieving my <span class="soft-skills-highlights">objectives</span>. Whether it's mastering a new technology or completing a project ahead of schedule, I set clear, <span class="soft-skills-highlights">achievable goals</span> and devise strategies to reach them.</li>
+                            <li>This focus drives my actions and motivates me to consistently deliver high-quality outcomes.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Leadership</p>
+                        <ul>
+                            <li>While my primary role may be as a team member, I possess leadership qualities that allow me to <span class="soft-skills-highlights">contribute positively</span> to group dynamics.</li>
+                            <li>I am capable of <span class="soft-skills-highlights">guiding others</span> through complex problems, offering support and encouragement to foster a collaborative environment.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Patience & Empathy</p>
+                        <ul>
+                            <li>In both my professional and personal life, I exhibit patience and empathy. Understanding that everyone progresses at their own pace, I offer constructive feedback and support to help others grow. </li>
+                            <li>My empathetic nature allows me to <span class="soft-skills-highlights">connect with people</span> on a deeper level, understanding their perspectives and needs.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Reliable & Adaptability</p>
+                        <ul>
+                            <li>I am known for my reliability, consistently delivering on my <span class="soft-skills-highlights">commitments</span>.</li>
+                            <li>My adaptability enables me to <span class="soft-skills-highlights">thrive</span> in changing environments, quickly adjusting to new situations or technologies to maintain productivity and effectiveness.</li>                        
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Responsible & Accountable</p>
+                        <ul>
+                            <li>Taking responsibility for my actions and decisions is paramount to me. I hold myself <span class="soft-skills-highlights">accountable</span> for my performance, striving to meet and exceed expectations in all areas of my work.</li>
+                            <li>This sense of responsibility extends to how I interact with others, ensuring that I contribute positively to team dynamics.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Team Player</p>
+                        <ul>
+                            <li>I am a dedicated team player, valuing the <span class="soft-skills-highlights">collective success</span> over individual achievements. </li>
+                            <li>Collaborative efforts are encouraged, and I actively participate in brainstorming sessions and problem-solving discussions to contribute to the <span class="soft-skills-highlights">team's overall success</span>.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Tech Savvy</p>
+                        <ul>
+                            <li>Being tech-savvy, I continuously <span class="soft-skills-highlights">explore</span> and <span class="soft-skills-highlights">integrate</span> new technologies into my workflow.</li>
+                            <li>My proficiency in using a wide range of tools, including AI technologies, enhances my ability to innovate and solve complex problems efficiently.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Time Management</p>
+                        <ul>
+                            <li>Effective time management is crucial to my success. By designating specific times for various activities, such as rest, nutrition, and work-related tasks, I <span class="soft-skills-highlights">ensure optimal productivity</span>.</li>
+                            <li>I'm also  tracking my <span class="soft-skills-highlights">schedule adherence</span> helps me identify areas for improvement, further enhancing my efficiency and effectiveness.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Strong Communication Skills</p>
+                        <ul>
+                            <li>My strong communication skills enable me to articulate thoughts <span class="soft-skills-highlights">clearly</span> and <span class="soft-skills-highlights">concisely</span>, whether in written form or verbal presentations.</li>
+                            <li>This skill is essential for conveying ideas effectively, facilitating productive discussions, and building strong relationships with colleagues and clients alike.</li>
+                        </ul>
+                        <br />
                     </div>
                     
                 </div>
@@ -148,7 +237,7 @@
     
             <div id="customer-service-specialist" class="title-container" onclick="showContent('customer-service-specialist-content')" >
 
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/CustomerServiceIcon.png" alt="Ricson's Customer Service Specialist Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Customer Service Specialist</p>
@@ -162,10 +251,20 @@
                         <p class="modal-titles">Customer Service Specialist</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>I have <span class="csr-highlights">more than 2 years</span> of customer service experience, I have a <span class="csr-highlights">strong understanding</span> of client needs and a <span class="csr-highlights">proven ability</span> to <span class="csr-highlights">deliver exceptional service</span>. I can clearly and <span class="csr-highlights">concisely communicate</span> with clients both <span class="csr-highlights">verbally</span> and in <span class="csr-highlights"></span>writing, ensuring a <span class="csr-highlights"></span>smooth and positive experience. </p>
+                        <br />
+                        <p>I am <span class="csr-highlights">adept</span> at identifying and resolving customer issues <span class="csr-highlights">efficiently and effectively</span>. I thrive in <span class="csr-highlights">collaborative environments</span> and am always willing to go the <span class="csr-highlights">extra mile</span> to assist customers. I am genuinely passionate about providing excellent customer service and <span class="csr-highlights">building positive relationships</span> with clients.</p>
+                        <br /> <br />
+                        <p>Tools I worked with:</p>
+                        <ul>
+                            <li>CRMs</li>
+                            <li>Gmail</li>
+                            <li>Global Distribution System (GDS)</li>
+                            <li>Avaya</li>
+                            <li>Twinkle </li>
+                            <li>Genesys </li>
+                        </ul>
                     </div>
                     
                 </div>
@@ -173,7 +272,7 @@
             
             <div id="general-virtual-assistant" class="title-container" onclick="showContent('general-virtual-assistant-content')">
 
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/GeneralVirtualAssistantIcon.png" alt="Ricson's General Virtual Assistant Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">General Virtual Assistant</p>
@@ -186,10 +285,21 @@
                         <p class="modal-titles">General Virtual Assistant</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>I'm <span class="gva-highlights">good at following instructions</span>. If you have something that I could help you with, you may provide me some instructions on what I should do and I'll just execute the tasks whether it could be <span class="gva-highlights">administrative support</span>, <span class="gva-highlights">basic bookeeping</span>, <span class="gva-highlights">research and data management</span>, and so on. </p>
+                        <br />
+                        <p>I'm a <span class="gva-highlights">fast-learner</span>. If there's a different tool that you'd like me to work with, I'll definitely <span class="gva-highlights">go beyond</span> studying such tool on my free time. </p>
+                        <br /> <br />
+                        <p>Tools I worked with:</p>
+                        <ul>
+                            <li>Google Workspace</li>
+                            <li>Microsoft 365</li>
+                            <li>Mindomo</li>
+                            <li>Canva</li>
+                            <li>Whatsapp</li>
+                            <li>Presearch</li>
+                            <li>And many more...</li>
+                        </ul>
                     </div>
                     
                 </div>
@@ -198,7 +308,7 @@
     
             <div id="executive-virtual-assistant" class="title-container" onclick="showContent('executive-virtual-assistant-content')">
 
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/ExecutiveVirtualAssistantIcon.png" alt="Ricson's Executive Virtual Assistant Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Executive Virtual Assistant</p>
@@ -211,17 +321,58 @@
                         <p class="modal-titles">Executive Virtual Assistant</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>message</p>
+                        <br /> <br />
+                        <p class="sub-content-title">Communication Management</p>
+                        <ul>
+                            <li><span class="exe-highlights">Serving as the Primary Liaison</span>: I take pride in being the first point of contact for my executive, ensuring that all communications are handled professionally and efficiently. I prioritize messages and inquiries, ensuring that nothing important slips through the cracks.</li>
+                            <li><span class="exe-highlights">Facilitating Information Flow</span>: I manage the flow of information by screening calls and directing correspondence, ensuring that my executive has access to timely and relevant information.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Scheduling & Calendar Management</p>
+                        <ul>
+                            <li><span class="exe-highlights">Mastering Calendar Coordination</span>: I expertly manage my executive’s calendar, scheduling meetings and appointments with precision. I coordinate with various stakeholders to find the best times, ensuring that my executive’s time is optimized.</li>
+                            <li><span class="exe-highlights">Overseeing Travel Arrangements</span>: I handle all travel logistics, from booking flights and accommodations to creating detailed itineraries. I ensure that every trip is well-planned and stress-free.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Administrative Support</p>
+                        <ul>
+                            <li><span class="exe-highlights">Preparing Essential Documents</span>: I take responsibility for preparing and formatting important documents, including memos, reports, and presentations, ensuring they are polished and professional.</li>
+                            <li><span class="exe-highlights">Coordinating Meetings</span>: I organize meetings by preparing agendas, taking minutes, and following up on action items. I ensure that all necessary materials are ready, making meetings productive and efficient.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Office Management</p>
+                        <ul>
+                            <li><span class="exe-highlights">Maintaining Record Keeping</span>: I manage filing systems and maintain organized records, ensuring that sensitive information is handled with confidentiality and care.</li>
+                            <li><span class="exe-highlights">Overseeing Office Supplies</span>: I monitor office supply inventory and order supplies as needed, keeping the office running smoothly and efficiently.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Financial Tasks</p>
+                        <ul>
+                            <li><span class="exe-highlights">Tracking Expenses</span>: I keep a detailed record of daily expenses and prepare financial reports, ensuring that all expenditures are accounted for and transparent.</li>
+                            <li><span class="exe-highlights">Managing Basic Bookkeeping</span>: I handle basic bookkeeping tasks, such as managing invoices and financial documents, ensuring accuracy and timely processing.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Event Planning</p>
+                        <ul>
+                            <li><span class="exe-highlights">Organizing Memorable Events</span>: I take charge of planning and coordinating company events, from team-building activities to meetings, fostering a positive and engaging workplace culture.</li>
+                        </ul>
+                        <br />
+                        <p class="sub-content-title">Additional Responsibilities</p>
+                        <ul>
+                            <li><span class="exe-highlights">Upholding Confidentiality</span>: I understand the importance of discretion and confidentiality in my role, handling sensitive information with the utmost care.</li>
+                            <li><span class="exe-highlights">Embracing Adaptability</span>: I thrive in dynamic environments, adapting to changing priorities and managing multiple tasks simultaneously while maintaining a high level of organization and attention to detail.</li>
+                        </ul>
+                        <br />
+
                     </div>
                 </div>
 
             </div>
     
             <div id="sales-calling" class="title-container" onclick="showContent('sales-calling-content')">
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/SalesIcon.png" alt="Ricson's Sales Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Sales Calling</p>
@@ -234,10 +385,23 @@
                         <p class="modal-titles">Sales Calling</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Although I haven't taken a role directly related to sales, my <span class="sales-highlights">customer service expertise</span> has given me the <span class="sales-highlights">opportunity to do sales</span>, on the side.</p>
+                        <br /> <br />
+                        <p class="sub-content-title">QUALFON SALES EXPERIENCE </p>
+                        <p>My sales experience in Qualfon was focused on <span class="sales-highlights">phones</span>, <span class="sales-highlights">accessories</span>, and <span class="sales-highlights">service plans</span>. I always asked what were their needs, how they're planning to use the product/service, the budget, and so on. Based on the information, I could then offer and suggest the right product or service that's tailored to every customer's needs.</p>
+                        <br /> <br />
+                        <p class="sub-content-title">CONCENTRIX SALES EXPERIENCE</p>
+                        <p>My sales experience in Concentrix was focused on 3 things: <span class="sales-highlights">activations</span>, <span class="sales-highlights">reactivations</span>, and <span class="sales-highlights">conversions</span> for satellite radios. Furthermore, I only did so if the technical issue was resolved as it wasn't allowed to pitch for a sale otherwise. </p>
+                        <br />
+                        <p>I always position the value of the service wherein it has an audio service in the radio, plus streaming services. In addition to that, I always gave my clients promotional rates. By getting such services on a promotional rate, most of them will definitely consider it as <span class="sales-highlights">"a steal"</span> and would just dive right in.</p>
+                        <br /> <br />
+                        <p class="sub-content-title">OVERALL</p>
+                        <p>I always try to steer a sales conversation towards the value of the service.</p>
+                        <p>I always try to steer a sales conversation towards the value of the service.</p>
+                        <p>I always try to steer a sales conversation towards the value of the service.</p>
+                        <p>I always try to steer a sales conversation towards the value of the service.</p>
+
                     </div>
 
                 </div>
@@ -245,7 +409,7 @@
             </div>
     
             <div id="front-end-web" class="title-container" onclick="showContent('front-end-web-content')" style="transition: 0.5s;">
-                <div>
+                <div class="skill-specific">
                     <img src="Pictures/FrontEndWebIcon.png" alt="Ricson's Front-end Web Development Skills" class="skills-images" />
                     <br /> <br />
                     <p class="skills-titles">Front-end Web Development</p>
@@ -258,10 +422,32 @@
                         <p class="modal-titles">Front-End Web Development</p>
                     </div>
                     
-                    <br />
-
                     <div class="modal-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>I can create front-end websites, or the part where a user would be interacting with. My skills in this matter may still be considered as an entry-level but <span class="front-end-highlights">I'm working further</span> to improve my skills. </p>
+                        <br />
+                        <p>I'm planning to <span class="front-end-highlights">expand my skills</span> into include the <span class="front-end-highlights">back-end</span> so I can become a <span class="front-end-highlights">full stack web developer</span>, if God willing. <span class="front-end-highlights">One step at a time</span>. I'd like to dig deeper into SQL (anything database-related), PHP, Node JS, etc. that are related to the back-end part of a website.</p>
+                        <br />
+                        <p>This <span class="front-end-highlights">website</span> is one of my front-end projects. </p>
+                        <br /> <br />
+                        <p>Coding Languages:</p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>C#</li>
+                            <li>React JS</li>
+                        </ul>
+                        <br />
+                        <p>Tools that I use:</p>
+                        <ul>
+                            <li>Visual Studio Code</li>
+                            <li>Visual Studio 2022</li>
+                            <li>Google AI Studio (for developers)</li>
+                            <li>Canva</li>
+                            <li>Diagrams</li>
+                            <li>Phind</li>
+                            <li>And many more...</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -307,6 +493,7 @@
                 
                     <p id="cv" class="contact-routes">                                   
                         <a href="#" target="_blank"> <span class="contact-icons">Curriculum Vitae:</span> Take a look on my CV!</a>
+                        <span class="copy">View</span>
                     </p>
  
                     <p id="phone" class="contact-routes">
@@ -348,11 +535,12 @@
                 </div>
             </div>
 
-        <div id="copyright">
-            <p>© Copyright 2024 <span class="copyright-ricson">Ricson Escalicas</span>. Designed by <span class="copyright-ricson">Ricson</span>.</p>
-        </div>
+            <div id="copyright">
+                <p>© Copyright 2024 <span class="copyright-ricson">Ricson Escalicas</span>. Designed by <span class="copyright-ricson">Ricson</span>.</p>
+            </div>
 
     </footer>
+
     <!-- Footer Ends -->
 
     <script src="app.js"></script>

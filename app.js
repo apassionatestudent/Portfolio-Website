@@ -61,37 +61,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.addEventListener('scroll', function() {
-  if (preventActiveRemoval) return; // Exit if the flag is true
- 
-  // Use the cross-browser compatible method to get the scroll position
-  let scrollTop = document.documentElement.scrollTop  
-             || document.body.scrollTop  
-             || 0;
- 
-  let navLinks = document.querySelectorAll('#navbar ul li a');
-  navLinks.forEach(function(currLink) {
-     let refElement = document.querySelector(currLink.getAttribute('href'));
-     if (refElement.offsetTop <= scrollTop && (refElement.offsetTop + refElement.offsetHeight > scrollTop)) {
-       document.querySelectorAll('#navbar ul li a').forEach(function(link) {
-         link.classList.remove('active-navigation');
-       });
-       currLink.classList.add('active-navigation');
+// Update tooltip text based on active navigation for responsive screen 
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburgerTooltip = document.getElementById('hamburger-tooltip');
+  const navSelection = document.getElementsByClassName("nav-selection");
 
-     } else if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
-      // If the user has scrolled to the bottom of the page, add the.active class to the "Hire Me" link
-      document.querySelectorAll('nav ul li a').forEach(function(link) {
-        link.classList.remove("active-navigation");
-        document.querySelector('#hireMe').classList.add("active-navigation");
-      });
-      document.querySelector('#hireMe').classList.add("active-navigation");
-   }else {
-       currLink.classList.remove("active");
-     }
-  });
- }); 
+  function updateTooltipText() {
+      for (let i = 0; i < navSelection.length; i++) {
+          if (navSelection[i].classList.contains('active-navigation')) {
+              hamburgerTooltip.textContent = navSelection[i].textContent;
+            if (hamburgerTooltip.textContent === 'Hire Me') {
+                // Apply styles to the hamburgerTooltip element, crude code as the class toggle doesn't seem to work for some reason
+                hamburgerTooltip.style.backgroundColor = "yellow";
+                hamburgerTooltip.style.color = "#2d2d2d";
+                hamburgerTooltip.style.border = "1px solid yellow";
+            } 
+            else {
+              hamburgerTooltip.style.backgroundColor = "#f0f0f0";
+              hamburgerTooltip.style.border = "1px solid #ddd";
+            }
+            return; // Exit the loop once the active navigation is found
+          }
+      }
+      // Default tooltip text (in case no active navigation)
+      hamburgerTooltip.textContent = 'Home';
 
-/*
+  }
+
+  window.addEventListener('scroll', updateTooltipText);
+  updateTooltipText(); // Initialize on page load
+}); 
+
+
+/* night mode 
  document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('themeToggle');
   const slider = document.querySelector('.slider');
@@ -140,21 +142,17 @@ window.addEventListener('scroll', function() {
 }); */
 
 // Hamburger Menu for responsiveness 
-
 function openHamburger() {
-  // document.getElementById("sidepanel").style.transform = "translateX(0)";
   document.getElementById("sidepanel").style.width = "100%";
   document.body.style.overflow = 'hidden'; // disenable scroll 
 }
 
 function closeHamburger() {
-  //document.getElementById("sidepanel").style.transform = "translateX(-100%)";
-
   document.getElementById("sidepanel").style.width = "0px";
   document.body.style.overflow = 'auto'; // re-enable scroll 
 }
 
-// Add event listeners to all links inside the side panel
+// Event listeners to all links inside the side panel
 document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
   link.addEventListener('click', function(event) {
     // Prevent default action to avoid jumping to the top of the page
@@ -164,7 +162,6 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
     const href = this.getAttribute('href');
     window.location.href = href;
     
-    // Close the side panel
     closeHamburger();
   });
 });
@@ -186,26 +183,70 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
 
 // SKILLS SECTION STARTS
 
-function showContent(elementId) {
-      let element = document.getElementById(elementId);
-      if (element) {
-          element.style.display = "block";
-          disableScroll();
-      }
-  }
-  
-  function closeModal() {
-      ['soft-skills-content', 'customer-service-specialist-content', 'general-virtual-assistant-content', 
-       'executive-virtual-assistant-content', 'sales-calling-content', 'front-end-web-content'].forEach(id => {
-          let element = document.getElementById(id);
-          if (element) {
-              element.style.display = "none";
-              enableScroll();
-          }
-      });
-  }
+document.getElementById("skills-container").style.overflow = 'hidden'; // disable the scroll for the said container, it's annoying 
 
-  // disable scroll to ensure user doesn't move elsewhere from Skills section 
+let isModalOpen = false;
+
+function isClickInsideModal(event) {
+  const modalContainers = document.getElementsByClassName('modal-containers');
+  return Array.from(modalContainers).some(container => container.contains(event.target));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.close').addEventListener('click', function() {
+      closeModal();
+  });
+});
+
+function showContent(elementId) {
+    let element = document.getElementById(elementId);
+    if (element) {
+        element.style.display = "block";
+        disableScroll();
+        isModalOpen = true;
+
+        // close modal if clicks outside 
+        function handleClickOutside(event) {
+            if (!isClickInsideModal(event) && isModalOpen) {
+                closeModal();
+            }
+        }
+
+        // close modal on "Esc" key
+        function handleEscKey(event) {
+            if (event.key === 'Escape' && isModalOpen) {
+                closeModal();
+            }
+        }
+
+        document.querySelector('.close').addEventListener('click', function() {
+          closeModal();
+      });
+
+        document.addEventListener('click', handleClickOutside, true);
+        document.addEventListener('keydown', handleEscKey, true);
+
+        // Prevent default behavior of links and buttons inside the modal
+        // document.querySelectorAll('.modal-containers *').forEach(el => el.onclick = function(e) { e.stopPropagation(); });
+    }
+}
+
+// Modify the closeModal function to set the modal state to false
+function closeModal() {
+    if (isModalOpen) {
+        ['soft-skills-content', 'customer-service-specialist-content', 'general-virtual-assistant-content',
+         'executive-virtual-assistant-content', 'sales-calling-content', 'front-end-web-content'].forEach(id => {
+             let element = document.getElementById(id);
+             if (element) {
+                 element.style.display = "none";
+                 enableScroll();
+             }
+         });
+        isModalOpen = false; // Set the modal state to false when closing the modal
+    }
+}
+
+// disable scroll to ensure user doesn't move elsewhere from Skills section 
 function disableScroll() {
   scrollTop = document.documentElement.scrollTop;
   scrollLeft = document.documentElement.scrollLeft;
@@ -227,8 +268,6 @@ function enableScroll() {
     }
   };
 } 
-  
-
 // SKILLS SECTIONS ENDS
 
 
