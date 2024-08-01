@@ -219,12 +219,21 @@ function showContent(elementId) {
             }
         }
 
+        function handleBackButton(event) {
+          if (isModalOpen) { // Assuming isModalOpen is a boolean indicating whether the modal is open
+              closeModal(); // Close the modal
+          }
+        }
+
+        
+
         document.querySelector('.close').addEventListener('click', function() {
           closeModal();
       });
 
         document.addEventListener('click', handleClickOutside, true);
         document.addEventListener('keydown', handleEscKey, true);
+        window.addEventListener('popstate', handleBackButton);
 
         // Prevent default behavior of links and buttons inside the modal
         // document.querySelectorAll('.modal-containers *').forEach(el => el.onclick = function(e) { e.stopPropagation(); });
