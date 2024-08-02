@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
           const section = document.getElementById(sections[i]);
           const rect = section.getBoundingClientRect();
 
+                  // Update the URL hash to reflect the current section
+        if (currentSection !== null) {
+          const currentLink = Array.from(navLinks).find(link => link.getAttribute('href') === '#' + currentSection);
+          if (currentLink) {
+              currentLink.classList.add("active-navigation");
+              window.location.hash = currentSection; // Update the URL hash
+          }
+      }
+
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2 * 0.8) {
             currentSection = sections[i];
             break;
@@ -144,12 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Hamburger Menu for responsiveness 
 function openHamburger() {
   document.getElementById("sidepanel").style.width = "100%";
-  document.body.style.overflow = 'hidden'; // disenable scroll 
+  document.body.style.overflow = 'hidden';
 }
 
 function closeHamburger() {
   document.getElementById("sidepanel").style.width = "0px";
-  document.body.style.overflow = 'auto'; // re-enable scroll 
+  document.body.style.overflow = 'auto';
 }
 
 // Event listeners to all links inside the side panel
@@ -167,12 +176,6 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
 });
 
 // NAVIGATION SECTIONS ENDS
-
-// HOME SECTION STARTS
-
-
-
-// HOME SECTION ENDS
 
 
 // ABOUT SECTION STARTS
@@ -199,7 +202,52 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function showContent(elementId) {
+  let element = document.getElementById(elementId);
+  if (element) {
+      element.style.display = "block";
+      disableScroll();
+      isModalOpen = true;
 
+      // Function to handle click outside the modal
+      function handleClickOutside(event) {
+          if (!isClickInsideModal(event) && isModalOpen) {
+              closeModal();
+          }
+      }
+
+      // Function to handle Esc key press
+      function handleEscKey(event) {
+          if (event.key === 'Escape' && isModalOpen) {
+              closeModal();
+          }
+      }
+
+      // Modified function to handle back button or popstate event
+      function handleBackOrPopState(event) {
+          event.preventDefault(); // Prevent the default action
+          closeModal();
+          /*
+          if(isModalOpen) { // Check if the modal is open
+              closeModal(); // Close the modal instead of navigating back
+          } */
+      }
+
+      document.querySelector('.close').addEventListener('click', function() {
+          closeModal();
+      });
+
+      document.addEventListener('click', handleClickOutside, true);
+      document.addEventListener('keydown', handleEscKey, true);
+      
+      // Add a single event listener for both back button and popstate event
+      window.addEventListener('popstate', handleBackOrPopState);
+
+      // Note: Removed the second, redundant popstate event listener
+  }
+}
+
+/*
 function showContent(elementId) {
     let element = document.getElementById(elementId);
     if (element) {
@@ -221,12 +269,11 @@ function showContent(elementId) {
             }
         }
 
-        
         function handleBackButton(event) {
           /*
           if (isModalOpen) { // Assuming isModalOpen is a boolean indicating whether the modal is open
               closeModal(); // Close the modal
-          } */
+          } 
 
             if(window.history.back()) {
                 closeModal();
@@ -245,7 +292,7 @@ function showContent(elementId) {
             closeModal();
         });
     }
-} 
+} */
 
 // Modify the closeModal function to set the modal state to false
 function closeModal() {
@@ -264,15 +311,11 @@ function closeModal() {
 
 // disable scroll to ensure user doesn't move elsewhere from Skills section 
 function disableScroll() {
-  scrollTop = document.documentElement.scrollTop;
-  scrollLeft = document.documentElement.scrollLeft;
-  // if any scroll is attempted, set this to the previous value
-  window.onscroll = function() {
-  window.scrollTo(scrollLeft, scrollTop);
-  };
+  document.body.style.overflow = 'hidden';
 }
 
 function enableScroll() {
+  document.body.style.overflow = 'auto';
   window.onscroll = function() {
     if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
       // changes background upon scroll
