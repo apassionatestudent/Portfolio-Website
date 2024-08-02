@@ -14,47 +14,6 @@ const nav = document.getElementById('navbar');
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navSelection = document.getElementsByClassName("nav-selection");
-  const sections = ['home', 'about', 'skills', 'hire-me'];
-
-  function setActiveNavigation() {
-      let currentSection = null;
-
-      const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-      if (scrollPosition === 0) {
-          for (let i = 0; i < navSelection.length; i++) {
-              navSelection[i].classList.remove("active-navigation");
-          }
-          return;
-      }
-
-      for (let i = 0; i < sections.length; i++) {
-          const section = document.getElementById(sections[i]);
-          const rect = section.getBoundingClientRect();
-
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2 * 0.8) {
-              currentSection = sections[i];
-              break;
-          }
-      }
-
-      for (let i = 0; i < navSelection.length; i++) {
-          if (navSelection[i].getAttribute('href').slice(1) === currentSection) {
-              navSelection[i].classList.add("active-navigation");
-              // Update the URL hash
-              history.pushState(null, null, '#' + currentSection.toLowerCase());
-          } else {
-              navSelection[i].classList.remove("active-navigation");
-          }
-      }
-  }
-
-  window.addEventListener('scroll', setActiveNavigation);
-  setActiveNavigation(); // Initialize on page load
-});
-
-/*
 // highlights nav links a, if a section covers 80% of the screen 
 document.addEventListener('DOMContentLoaded', () => {
   const navSelection = document.getElementsByClassName("nav-selection");
@@ -85,21 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
               currentSection = sections[i];
               break;
-          } 
+          } */
       }
 
       for (let i = 0; i < navSelection.length; i++) {
           if (navSelection[i].getAttribute('href').slice(1) === currentSection) {
               navSelection[i].classList.add("active-navigation");
+              //history.pushState(null, null, '#' + currentSection.toLowerCase());
+              //history.pushState(null + currentSection.toLowerCase());
           } else {
               navSelection[i].classList.remove("active-navigation");
           }
-      }
+      }  
   }
 
   window.addEventListener('scroll', setActiveNavigation);
   setActiveNavigation(); // Initialize on page load
-}); */
+}); 
 
 
 // Update tooltip text based on active navigation for responsive screen 
