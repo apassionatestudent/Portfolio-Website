@@ -225,13 +225,10 @@ function showContent(elementId) {
         document.addEventListener('keydown', handleEscKey, true);
         document.addEventListener('keydown', backOnPhone, true);
 
-        /*
+        
         window.addEventListener('popstate', function(event) {
              closeModal();
-             if (window.history.back) {
-              event.preventDefault(); // Prevents the default back action
-             }
-        }); */
+        }); 
     }
 }
 
