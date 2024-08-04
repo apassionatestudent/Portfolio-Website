@@ -722,8 +722,7 @@ h1 {
 }
 
 #copyright p {
-    color: #fff !important;
-    /* it has to be specified, otherwise * selector will take over */
+    color: #fff !important; /* it has to be specified, otherwise * selector will take over */
 }
 
 .copyright-ricson {
@@ -777,7 +776,7 @@ h1 {
     
     .about-sections {
         width: 35vh;
-        margin: 18px;
+        margin: 12px;
     }
 
     .about-static {
@@ -800,7 +799,7 @@ h1 {
         height: 13.3%;
         border-left: none; border-right: none;
         display: flex;
-        align-items: center; /* Optional: Aligns children vertically in the middle */
+        align-items: center; 
     }
 
     #soft-skills {
@@ -829,7 +828,7 @@ h1 {
     }
     .skills-images {
         width: 50px; 
-        height: auto; /* Maintains aspect ratio */
+        height: auto; 
     }
 
     .title-contents {
