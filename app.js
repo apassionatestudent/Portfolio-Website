@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 0; i < navSelection.length; i++) {
           if (navSelection[i].getAttribute('href').slice(1) === currentSection) {
               navSelection[i].classList.add("active-navigation");
-              //history.pushState(null, null, '#' + currentSection.toLowerCase());
-              //history.pushState(null + currentSection.toLowerCase());
           } else {
               navSelection[i].classList.remove("active-navigation");
           }
@@ -178,9 +176,7 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
 
 
 // SKILLS SECTION STARTS
-
 document.getElementById("skills-container").style.overflow = 'hidden'; // disable the scroll for the said container, it's annoying 
-
 
 let isModalOpen = false;
 
@@ -195,52 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function showContent(elementId) {
-  let element = document.getElementById(elementId);
-  if (element) {
-      element.style.display = "block";
-      disableScroll();
-      isModalOpen = true;
 
-      // Function to handle click outside the modal
-      function handleClickOutside(event) {
-          if (!isClickInsideModal(event) && isModalOpen) {
-              closeModal();
-          }
-      }
-
-      // Function to handle Esc key press
-      function handleEscKey(event) {
-          if (event.key === 'Escape' && isModalOpen) {
-              closeModal();
-          }
-      }
-
-      // Modified function to handle back button or popstate event
-      function handleBackOrPopState(event) {
-          event.preventDefault(); // Prevent the default action
-          closeModal();
-          /*
-          if(isModalOpen) { // Check if the modal is open
-              closeModal(); // Close the modal instead of navigating back
-          } */
-      }
-
-      document.querySelector('.close').addEventListener('click', function() {
-          closeModal();
-      });
-
-      document.addEventListener('click', handleClickOutside, true);
-      document.addEventListener('keydown', handleEscKey, true);
-      
-      // Add a single event listener for both back button and popstate event
-      window.addEventListener('popstate', handleBackOrPopState);
-
-      // Note: Removed the second, redundant popstate event listener
-  }
-}
-
-/*
 function showContent(elementId) {
     let element = document.getElementById(elementId);
     if (element) {
@@ -266,7 +217,7 @@ function showContent(elementId) {
           /*
           if (isModalOpen) { // Assuming isModalOpen is a boolean indicating whether the modal is open
               closeModal(); // Close the modal
-          } 
+          }  */
 
             if(window.history.back()) {
                 closeModal();
@@ -285,7 +236,7 @@ function showContent(elementId) {
             closeModal();
         });
     }
-} */
+}
 
 // Modify the closeModal function to set the modal state to false
 function closeModal() {
