@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
 function showContent(elementId) {
     let element = document.getElementById(elementId);
     if (element) {
@@ -213,15 +212,9 @@ function showContent(elementId) {
             }
         }
 
-        function handleBackButton(event) {
-          /*
-          if (isModalOpen) { // Assuming isModalOpen is a boolean indicating whether the modal is open
-              closeModal(); // Close the modal
-          }  */
-
-            if(window.history.back()) {
-                closeModal();
-            }
+        function backOnPhone(event) {
+            closeModal();
+            event.preventDefault(); // Prevents the default back action
         }
 
         document.querySelector('.close').addEventListener('click', function() {
@@ -230,11 +223,15 @@ function showContent(elementId) {
 
         document.addEventListener('click', handleClickOutside, true);
         document.addEventListener('keydown', handleEscKey, true);
-        window.addEventListener('popstate', handleBackButton);
+        document.addEventListener('keydown', backOnPhone, true);
 
+        /*
         window.addEventListener('popstate', function(event) {
-            closeModal();
-        });
+             closeModal();
+             if (window.history.back) {
+              event.preventDefault(); // Prevents the default back action
+             }
+        }); */
     }
 }
 
