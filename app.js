@@ -212,19 +212,12 @@ function showContent(elementId) {
             }
         }
 
-        function backOnPhone(event) {
-            closeModal();
-            event.preventDefault(); // Prevents the default back action
-        }
-
         document.querySelector('.close').addEventListener('click', function() {
             closeModal();
         });
 
         document.addEventListener('click', handleClickOutside, true);
         document.addEventListener('keydown', handleEscKey, true);
-        document.addEventListener('keydown', backOnPhone, true);
-
         
         window.addEventListener('popstate', function(event) {
              closeModal();
