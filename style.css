@@ -571,22 +571,27 @@ h1 {
 
 
 .responsive-closers {
-    padding: 10px;
+    padding: 10px; 
     position: fixed; 
     bottom: 0;
     right: 0;
+    text-align: center;
     z-index: 10;
 } 
 
 .responsive-close {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     color: #444444;
-    font-size: 25px;
-    /*border-radius: 50%; */
+    font-size: 30px;
     font-weight: bold;
     margin: 0 20px 15px 0;
+    text-align: center;
     padding: 7px; 
     color: #fff;
-    background-color: red;
+    background-color: rgb(225, 3, 3);
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;    
 }
 /* Skills Ends */
 
