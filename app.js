@@ -155,11 +155,9 @@ function closeHamburger() {
 // Event listeners to all links inside the side panel
 document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
   link.addEventListener('click', function(event) {
-    // Prevent default action to avoid jumping to the top of the page
-    event.preventDefault();
+    event.preventDefault(); // Prevent default action to avoid jumping to the top of the page
     
-    // Perform navigation programmatically
-    const href = this.getAttribute('href');
+    const href = this.getAttribute('href'); // Perform navigation programmatically
     window.location.href = href;
     
     closeHamburger();
