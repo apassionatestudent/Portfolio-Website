@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       // Default tooltip text (in case no active navigation)
       hamburgerTooltip.textContent = 'Home';
-
   }
 
   window.addEventListener('scroll', updateTooltipText);
@@ -93,53 +92,78 @@ document.addEventListener('DOMContentLoaded', () => {
 }); 
 
 
-/* night mode 
- document.addEventListener('DOMContentLoaded', function() {
+// Night/Day Mode
+document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
-  const slider = document.querySelector('.slider');
+  themeToggle.addEventListener('click', nightTheme);
 
-  // Function to apply theme
-  function applyTheme(theme) {
-    document.documentElement.style.setProperty('--bg-color', theme.bgColor);
-    document.documentElement.style.setProperty('--text-color', theme.textColor);
-  }
+  const currentHour = new Date().getHours();
 
-  // Get local time and decide theme
-  const currentTime = new Date().getHours();
-  let theme;
-  if (currentTime >= 7 && currentTime <= 18) {
-    theme = { bgColor: '#fff', textColor: '#000' };
-  } else {
-    theme = { bgColor: '#000', textColor: '#fff' };
-  }
-  applyTheme(theme);
-
-  // Toggle theme based on local time
-  setInterval(() => {
-    const currentTime = new Date().getHours();
-    if (currentTime >= 7 && currentTime <= 18) {
-      applyTheme({ bgColor: '#fff', textColor: '#000' });
-    } else {
-      applyTheme({ bgColor: '#000', textColor: '#fff' });
-    }
-  }, 3600000); // Check every hour
-
-  // Handle toggle switch
-  themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-      document.documentElement.setAttribute('class', 'night-theme');
-    } else {
-      document.documentElement.setAttribute('class', '');
-    }
-  });
-
-  // Initialize theme based on saved preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'night') {
-    document.documentElement.setAttribute('class', 'night-theme');
+  // Check if the current hour is within the night hours
+  if ((currentHour <= 18 && currentHour <= 5) || (currentHour > nightEnd)) {
+    nightTheme();
     themeToggle.checked = true;
+    console.log("Night Theme Activated");
   }
-}); */
+  else {
+    themeToggle.checked = false;
+  }
+});
+
+function nightTheme() {
+  
+  const elements = [
+    
+    // home
+
+    // about
+    { id: 'about'},
+    { class: 'about-sections'},
+    { class: 'about-images'},
+
+    // skills 
+    { id: 'skills'},
+    { id: 'skills-container'},
+    { class: 'skills-images'},
+    { class: 'skills-titles'},
+    { class: 'modal-containers'},
+    { class: 'modal-content'},
+    
+    // hire-me
+    { id: 'hire-me' },
+    { id: 'get-in-touch' },
+    { id: 'get-in-touch-msg' },
+    { id: 'msg-container' },
+    { id: 'hire-me-msg' },
+    { id: 'contact-links' },
+    { id: 'hi-there'},
+    { id: 'contact-me'}
+  ];
+
+  elements.forEach(element => {
+    const el = document.getElementById(element.id);
+    let targetElements = document.getElementsByClassName(element.class); 
+
+    if (el) {
+      if (el.classList.contains('night-theme')) {
+        el.classList.remove('night-theme');
+        
+      } else {
+        el.classList.add('night-theme');
+      }
+    } 
+    for (let i = 0; i < targetElements.length; i++) {
+      const targetElement = targetElements[i];
+      if (!targetElement.classList.contains('night-theme')) {
+        targetElement.classList.add('night-theme'); 
+      }
+      else {
+        targetElement.classList.remove('night-theme'); 
+      }
+    }
+
+  }); 
+}
 
 // Hamburger Menu for responsiveness 
 function openHamburger() {
