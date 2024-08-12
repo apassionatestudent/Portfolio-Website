@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }); 
 
 
-// Update tooltip text based on active navigation for responsive screen 
+// Update tooltip text based on active navigation for responsive screen only
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerTooltip = document.getElementById('hamburger-tooltip');
   const navSelection = document.getElementsByClassName("nav-selection");
@@ -83,8 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Exit the loop once the active navigation is found
           }
       }
-      // Default tooltip text (in case no active navigation)
-      hamburgerTooltip.textContent = 'Home';
+      hamburgerTooltip.textContent = 'Home';       // Default tooltip text (in case no active navigation)
   }
 
   window.addEventListener('scroll', updateTooltipText);
@@ -100,10 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentHour = new Date().getHours();
 
   // Check if the current hour is within the night hours
-  if ((currentHour <= 18 && currentHour <= 5) || (currentHour > nightEnd)) {
+  if (currentHour <= 18 && currentHour <= 5) {
     nightTheme();
     themeToggle.checked = true;
-    console.log("Night Theme Activated");
   }
   else {
     themeToggle.checked = false;
@@ -113,17 +111,22 @@ document.addEventListener('DOMContentLoaded', () => {
 function nightTheme() {
   
   const elements = [
+    // navigation 
+    { id: 'sidepanel'},
     
     // home
+    { id: 'home'},
 
     // about
     { id: 'about'},
+    { class: 'about-static'},
     { class: 'about-sections'},
     { class: 'about-images'},
 
     // skills 
     { id: 'skills'},
     { id: 'skills-container'},
+    { class: 'title-container'},
     { class: 'skills-images'},
     { class: 'skills-titles'},
     { class: 'modal-containers'},
@@ -134,6 +137,7 @@ function nightTheme() {
     { id: 'get-in-touch' },
     { id: 'get-in-touch-msg' },
     { id: 'msg-container' },
+    { id: 'projects-container'},
     { id: 'hire-me-msg' },
     { id: 'contact-links' },
     { id: 'hi-there'},
