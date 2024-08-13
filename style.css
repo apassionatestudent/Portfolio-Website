@@ -1,5 +1,4 @@
 /* General Design Starts */
-
 * {
     margin: 0; 
     font-family: Arial, Helvetica, sans-serif;
@@ -11,8 +10,8 @@ body {
 }
 
 html {
-    scroll-behavior: auto; /* Fallback for Safari */
-    -webkit-scroll-behavior: smooth; /* For Safari */
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
 }
 
 .main-sections {
@@ -23,7 +22,6 @@ html {
     width: 100%;
     min-height: 100vh;
 }
-
 /* General Design Ends */
 
 
