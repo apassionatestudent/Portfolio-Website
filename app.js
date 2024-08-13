@@ -129,6 +129,7 @@ function nightTheme() {
     { class: 'title-container'},
     { class: 'skills-images'},
     { class: 'skills-titles'},
+    { class: 'title-contents'},
     { class: 'modal-containers'},
     { class: 'modal-content'},
     
@@ -141,7 +142,8 @@ function nightTheme() {
     { id: 'hire-me-msg' },
     { id: 'contact-links' },
     { id: 'hi-there'},
-    { id: 'contact-me'}
+    { id: 'contact-me'},
+    { class: 'contact-routes'}
   ];
 
   elements.forEach(element => {

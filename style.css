@@ -320,12 +320,18 @@ h1 {
 
 .about-sections {
     display: inline-block;
+    transition: 0.4s;
+    overflow-y: hidden;
     margin: 40px;
     padding: 30px;
     height: 75vh;
     border-radius: 20px;
     background: rgb(236, 236, 236); 
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.about-sections:hover {
+    overflow-y: scroll;
 }
 
 .about-images {
@@ -351,8 +357,25 @@ h1 {
     height: 100%; width: 100%;
 }
 
-/* Night Theme -About */
+.about-me-highlights, .professional-highlights, .hobbies-highlights {
+    display: inline-block;
+    margin: 1px;
+    padding: 1px;
+    border-radius: 5px;
+    color: #2d2d2d;
+}
+.about-me-highlights {
+    /*background: linear-gradient(to right, #cdffd8, #94b9ff); */
+    background-color: #ff827a;
+}
+.professional-highlights {
+    background-color: #38b6ff;
+}
+.hobbies-highlights {
+    background-color: #ffde59;
+}
 
+/* Night Theme -About */
 #about.night-theme {
     background-color: #464646;
 }
@@ -366,7 +389,6 @@ h1 {
     border: 5px solid rgb(247, 247, 247);
 }
 /* ABOUT ENDS */ 
-
 
 /* SKILLS STARTS */ 
 #skills {
@@ -553,7 +575,6 @@ h1 {
     transition: 0.3s !important;
 }
 
-
 .title-container.expanded { 
     flex-grow: 1; 
 }
@@ -588,7 +609,6 @@ h1 {
 }
 
 #skills-container.night-theme {
-    /*background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); */
     background-color: #262626;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
@@ -608,13 +628,17 @@ h1 {
     border: 1px solid #3c3c3c;
 }
 
-.title-container.night-theme:hover, .modal-containers.night-theme {
+.title-container.night-theme:hover {
     opacity: 0.8;
 }
 
+.title-contents.night-theme {
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
 .modal-containers.night-theme, .modal-content.night-theme p, .modal-content.night-theme ul li {
-    background-color: #323232 !important;
-    color: #efefef;
+    background-color: #292929 !important;
+    color: #b0afaf;
 }
 
 .modal-containers.night-theme {
@@ -780,6 +804,10 @@ h1 {
 #hire-me-msg.night-theme, #contact-links.night-theme {
     background-color: rgb(36, 36, 36); 
     border-left: 5px solid yellow;
+}
+
+.contact-routes.night-theme {
+    background-color: #c36b07;
 }
 /* HIRE ME ENDS */ 
 
