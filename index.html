@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-    Created by Ricson Escalicas from scratch: HTML, CSS, REsponsive Web Design, JavaScript, and SEO. 
+    Created by Ricson Escalicas from scratch: HTML, CSS, Responsive Web Design, JavaScript, and SEO. 
 -->
 
 <html lang="en-US">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <nav id="navbar">
         
@@ -249,7 +249,7 @@
                     </div>
                     
                     <div class="modal-content">
-                        <p>I have <span class="csr-highlights">more than 2 years</span> of customer service experience, I have a <span class="csr-highlights">strong understanding</span> of client needs and a <span class="csr-highlights">proven ability</span> to <span class="csr-highlights">deliver exceptional service</span>. I can clearly and <span class="csr-highlights">concisely communicate</span> with clients both <span class="csr-highlights">verbally</span> and in <span class="csr-highlights"></span>writing, ensuring a <span class="csr-highlights"></span>smooth and positive experience. </p>
+                        <p>I have <span class="csr-highlights">more than 2 years</span> of customer service experience, I have a <span class="csr-highlights">strong understanding</span> of client needs and a <span class="csr-highlights">proven ability</span> to <span class="csr-highlights">deliver exceptional service</span>. I can clearly and <span class="csr-highlights">concisely communicate</span> with clients both <span class="csr-highlights">verbally</span> and in <span class="csr-highlights">writing</span>, ensuring a <span class="csr-highlights">smooth</span> and <span class="csr-highlights">positive experience</span>.</p>
                         <br />
                         <p>I am <span class="csr-highlights">adept</span> at identifying and resolving customer issues <span class="csr-highlights">efficiently and effectively</span>. I thrive in <span class="csr-highlights">collaborative environments</span> and am always willing to go the <span class="csr-highlights">extra mile</span> to assist customers. I am genuinely passionate about providing excellent customer service and <span class="csr-highlights">building positive relationships</span> with clients.</p>
                         <br /> <br />
@@ -420,14 +420,14 @@
                 <div class="skill-specific">
                     <img src="Pictures/FrontEndWebIcon.png" alt="Ricson's Front-end Web Development Skills" class="skills-images" />
                     <br /> <br />
-                    <p class="skills-titles">Front-end Web Development</p>
+                    <p class="skills-titles" id="front-end-title">Front-end Web Development</p>
                 </div>
             </div>
             <div id="front-end-web-content" class="title-contents">
                 <div class="modal-containers">
                     <div class="modal-title-containers" id="bg-front-end">
                         <span class="close" onclick="closeModal()">&times;</span>
-                        <p class="modal-titles">Front-End Web Development</p>
+                        <p class="modal-titles" style="color: #fff">Front-End Web Development</p>
                     </div>
                     
                     <div class="modal-content">
@@ -494,7 +494,13 @@
                     
                     <div id="projects-container">
                         <p id="works-title">Some of My Works:</p>
-                        <p><span class="projects">Web Dev 2020</span> <span class="projects">Grading System</span> <span class="projects">Food Ordering Form</span> <span class="projects">Scheduling</span> <span class="projects">Tools Database</span></p>
+                        <p>
+                            <a href="" class="projects" target="_blank">Web Dev 2020</a>
+                            <a href="" class="projects" target="_blank">Grading System</a>
+                            <a href="" class="projects" target="_blank">Food Ordering Form</a>
+                            <a href="https://drive.google.com/file/d/1BRQolVGiMLnDne-6_S330RGkqrwpYIFt/view?usp=drive_link" class="projects" target="_blank">Scheduling</a>
+                            <a href="https://docs.google.com/spreadsheets/d/1RObFDuHNW28fSfXCLugkNssGK4Is4SQqVsX4IhFdMCc/edit?usp=sharing" class="projects" target="_blank">Tools Database</a>
+                        </p>
                     </div>
                 </div>
         
@@ -503,47 +509,50 @@
                     <p id="contact-me">Contact Me</p>
                 
                     <p id="cv" class="contact-routes">                                   
-                        <a href="#" target="_blank"> <span class="contact-icons">Curriculum Vitae:</span> Take a look on my CV!</a>
-                        <span class="copy">View</span>
+                        <a href="#" target="_blank"> <span class="contact-icons">Resume:</span> Take a look on my Resume!</a>
+                        <span class="copy" id="copy-resume">View</span>
                     </p>
  
                     <p id="phone" class="contact-routes">
-                        <a href="#" target="_blank"> <span class="contact-icons">Phone:</span> (+63) 943-818-4072 </a>
-                        <span class="copy">Copy</span>
+                        <a href="tel:+639438184072" target="_blank"> <span class="contact-icons">Phone:</span> (+63) 943-818-4072 </a>
+                        <span class="copy" id="copy-phone">Copy</span>
                     </p>
 
                     <p id="whatsapp" class="contact-routes">
-                        <a href="#" target="_blank"> <span class="contact-icons">Whatsapp:</span>  (+63) 943-818-4072 </a>
-                        <span class="copy">Copy</span>
+                        <a href="https://wa.me/qr/MQ2KTDVE4BGOJ1" target="_blank"> <span class="contact-icons">Whatsapp:</span>  (+63) 943-818-4072 </a>
+                        <span class="copy" id="copy-whatsapp">Copy</span>
                     </p>
 
                     <p id="email" class="contact-routes">             
                         <a href="mailto:ricson.escalicas@gmail.com" target="_blank"> <span class="contact-icons">Email:</span> ricson.escalicas@gmail.com </a>
-                        <span class="copy">Copy</span>
+                        <span class="copy" id="copy-email">Copy</span>
                     </p>
 
                     <p id="skype" class="contact-routes">
                                               
                         <a href="live:.cid.3c3352f6ea6b089b" target="_blank"> <span class="contact-icons">Skype:</span> Ricson Escalicas </a>
-                        <span class="copy">Copy</span>
+                        <span class="copy" id="copy-skype">Copy</span>
                     </p>
 
                     <p id="linkedin" class="contact-routes">
-                        <a href="#" target="_blank"> <span class="contact-icons">LinkedIn:</span> Ricson Escalicas </a>
-                        <span class="copy">Copy</span>
+                        <a href="https://www.linkedin.com/in/ricson-escalicas/" target="_blank"> <span class="contact-icons">LinkedIn:</span> Ricson Escalicas </a>
+                        <span class="copy" id="copy-linkedin">Copy</span>
                     </p>
 
                     <p id="facebook" class="contact-routes">
                         <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank"> <span class="contact-icons">Facebook:</span> Ricson Escalicas</a>
-                        <span class="copy">Copy</span>
+                        <span class="copy" id="copy-facebook">Copy</span>
                     </p>
 
                     <p id="online-jobs-ph" class="contact-routes">
-                        <a href="https://www.facebook.com/ricsonescalicas.enthusiast" target="_blank"> <span class="contact-icons">Online Jobs PH:</span>  Ricson Escalicas</a>
-                        <span class="copy">Copy</span>
+                        <a href="https://www.onlinejobs.ph/jobseekers/info/1685621" target="_blank"> <span class="contact-icons">Online Jobs PH:</span>  Ricson Escalicas</a>
+                        <span class="copy" id="copy-ojph">Copy</span>
                     </p>
-    
                 </div>
+            </div>
+
+            <div id="contact-popup">
+                <p id="popup-msg">Your message here.</p>
             </div>
 
             <div id="copyright">

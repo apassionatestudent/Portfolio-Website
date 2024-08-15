@@ -97,9 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggle.addEventListener('click', nightTheme);
 
   const currentHour = new Date().getHours();
+  console.log("time: " + currentHour);
+
 
   // Check if the current hour is within the night hours
-  if (currentHour <= 18 && currentHour <= 5) {
+  if ((currentHour >= 18 && currentHour < 24) || (currentHour >= 0 && currentHour < 6)) {
     nightTheme();
     themeToggle.checked = true;
   }
@@ -111,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function nightTheme() {
   
   const elements = [
+    // all
+    { id: 'body'},
+
     // navigation 
     { id: 'sidepanel'},
     
@@ -143,7 +148,9 @@ function nightTheme() {
     { id: 'contact-links' },
     { id: 'hi-there'},
     { id: 'contact-me'},
-    { class: 'contact-routes'}
+    { class: 'contact-routes'},
+    { id: 'contact-popup'},
+    { id: 'popup-msg'}
   ];
 
   elements.forEach(element => {
@@ -198,6 +205,7 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
 
 
 // ABOUT SECTION STARTS
+
 
 
 // ABOUT SECTION ENDS
@@ -288,8 +296,42 @@ function enableScroll() {
 } 
 // SKILLS SECTIONS ENDS
 
-
 // HIRE ME SECTION STARTS
+const contacts = {
+  phoneNumber: "(+63) 943-818-4072",
+  email: "ricson.escalicas@gmail.com",
+  skype: "live:.cid.3c3352f6ea6b089b",
+  linkedin: "Ricson Escalicas",
+  facebook: "Ricson Escalicas",
+  ojph: "Ricson Escalicas",
+};
 
+function getContactInfo(platform) {
+  return `${contacts[platform]}`;
+}
 
+function addCopyListener(id, infoType) {
+  const copyButton = document.getElementById(id);
+  copyButton.addEventListener('click', function() {
+
+    document.getElementById("popup-msg").innerHTML = `Copied ${getContactInfo(infoType)} to the clipboard.`;
+    document.getElementById('contact-popup').style.display = 'block';
+  
+    navigator.clipboard.writeText(getContactInfo(infoType))
+      .then(() => {
+          setTimeout(function() {
+          document.getElementById('contact-popup').style.display = 'none';
+        }, 3000);
+      })
+      .catch(err => console.error('Error copying text: ', err));
+  });
+}
+
+addCopyListener('copy-phone', 'phoneNumber');
+addCopyListener('copy-whatsapp', 'phoneNumber');
+addCopyListener('copy-email', 'email');
+addCopyListener('copy-skype', 'skype');
+addCopyListener('copy-linkedin', 'linkedin');
+addCopyListener('copy-facebook', 'facebook');
+addCopyListener('copy-ojph', 'ojph');
 // HIRE ME SECTION ENDS

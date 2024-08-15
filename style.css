@@ -12,6 +12,7 @@ body {
 html {
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 .main-sections {
@@ -22,10 +23,29 @@ html {
     width: 100%;
     min-height: 100vh;
 }
-/* General Design Ends */
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
 
-/* Navigation Starts */
+body::-webkit-scrollbar-track {
+    background: #d2d2d2;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #555;;
+}
+
+body.night-theme::-webkit-scrollbar-track {
+    background: #606060;;
+}
+
+body.night-theme::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+}
+/* GENERAL DESIGNS */
+
+/* NAVIGATION STARTS */
 #navbar {
     top: 0;
     color: aliceblue;
@@ -320,18 +340,40 @@ h1 {
 
 .about-sections {
     display: inline-block;
-    transition: 0.4s;
-    overflow-y: hidden;
+    overflow-y: scroll; /* Changed to auto to enable scrolling */
     margin: 40px;
     padding: 30px;
     height: 75vh;
     border-radius: 20px;
-    background: rgb(236, 236, 236); 
+    background: rgb(236, 236, 236);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    max-width: 100%; /* Ensure content does not exceed the container width */
+    
 }
 
-.about-sections:hover {
+.about-sections::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+}
+
+.about-sections::-webkit-scrollbar:hover {
     overflow-y: scroll;
+}
+
+.about-sections::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+}
+
+.about-sections:hover::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.about-sections:hover::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.about-sections:hover::-webkit-scrollbar-thumb {
+    background: #555;
 }
 
 .about-images {
@@ -365,8 +407,7 @@ h1 {
     color: #2d2d2d;
 }
 .about-me-highlights {
-    /*background: linear-gradient(to right, #cdffd8, #94b9ff); */
-    background-color: #ff827a;
+    background-color: #ffa732;
 }
 .professional-highlights {
     background-color: #38b6ff;
@@ -452,7 +493,7 @@ h1 {
 }
 
 .close {
-    color: #444444;
+    color: #020202;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -485,7 +526,20 @@ h1 {
     background-color: #ebebeb;
     border-radius: 20px;
     box-shadow: 0 0 15px #F5F5F5;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+.modal-containers::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+}
+
+.modal-containers:hover::-webkit-scrollbar-track {
+    background: #d2d2d2;
+}
+
+.modal-containers:hover::-webkit-scrollbar-thumb {
+    background: #555;;
 }
 
 .modal-title-containers {
@@ -565,14 +619,17 @@ h1 {
 }
 
 #front-end-web:hover {
-    background: linear-gradient(to right, #cdffd8, #94b9ff);
-    transition: 0.3s !important;
+    background-color: #5a5a5a;
+    color: #fff !important;
+}
+
+.title-container:hover .skill-specific #front-end-title {
+    color: #fff !important;
 }
 
 #bg-front-end, .front-end-highlights {
-    background: linear-gradient(to right, #cdffd8, #94b9ff);
-    color: #000;
-    transition: 0.3s !important;
+    background-color: #5a5a5a;
+    color: #fff !important;
 }
 
 .title-container.expanded { 
@@ -644,6 +701,14 @@ h1 {
 .modal-containers.night-theme {
     box-shadow: 0 0 15px #272727;
 }
+
+.modal-containers.night-theme:hover::-webkit-scrollbar-track {
+    background: #606060;;
+}
+
+.modal-containers.night-theme:hover::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+}
 /* SKILLS ENDS */
 
 /* HIRE ME STARTS */ 
@@ -708,7 +773,6 @@ h1 {
     background-color: rgba(239, 239, 239, 0.8);
 } 
 
-
 .projects {
     display: inline-block;
     margin: 3px;
@@ -716,8 +780,8 @@ h1 {
     padding: 4px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
-
 
 #contact-links a {
     color: #fff;
@@ -788,6 +852,21 @@ h1 {
     font-weight: 700; color: yellow;
 }
 
+#contact-popup {
+    display: none; 
+    position: fixed; 
+    bottom: 15%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 300px; 
+    padding: 10px;
+    text-align: center;
+    background-color: white; 
+    border: 2px solid #888; 
+    border-radius: 10px;
+    z-index: 10; 
+}
+
 /* Night Theme -Hire Me */
 #hire-me.night-theme, #get-in-touch-container.night-theme {
     background-color: #343434 !important; 
@@ -809,6 +888,16 @@ h1 {
 .contact-routes.night-theme {
     background-color: #c36b07;
 }
+
+#contact-popup.night-theme, #popup-msg.night-theme {
+    background-color: #333333;
+    color: #e1e0e0; 
+}
+/*
+#popup-msg.night-theme {
+    color: #b0afaf;
+} */
+
 /* HIRE ME ENDS */ 
 
 /* RESPONSIVE APPLICATIONS STARTS */
