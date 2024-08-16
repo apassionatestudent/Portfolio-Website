@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTooltipText(); // Initialize on page load
 }); 
 
-
 // Night/Day Mode
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');

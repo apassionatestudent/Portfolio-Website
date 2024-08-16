@@ -781,6 +781,11 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.projects:hover {
+    background-color: #ffde59;
 }
 
 #contact-links a {
