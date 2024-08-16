@@ -126,6 +126,7 @@ function nightTheme() {
     { class: 'about-static'},
     { class: 'about-sections'},
     { class: 'about-images'},
+    { class: 'basis'},
 
     // skills 
     { id: 'skills'},
@@ -136,6 +137,13 @@ function nightTheme() {
     { class: 'title-contents'},
     { class: 'modal-containers'},
     { class: 'modal-content'},
+
+    { class: 'soft-skills-highlights'},
+    { class: 'csr-highlights'},
+    { class: 'front-end-highlights'},
+    { class: 'gva-highlights'},
+    { class: 'exe-highlights'},
+    { class: 'sales-highlights'},
     
     // hire-me
     { id: 'hire-me' },

@@ -429,6 +429,10 @@ h1 {
 .about-images.night-theme {
     border: 5px solid rgb(247, 247, 247);
 }
+
+.basis.night-theme {
+    color: #efefef;
+}
 /* ABOUT ENDS */ 
 
 /* SKILLS STARTS */ 
@@ -523,7 +527,7 @@ h1 {
     width: 70%;
     height: 70%;
     margin: 0 auto;
-    background-color: #ebebeb;
+    background-color: #e1e1e1;
     border-radius: 20px;
     box-shadow: 0 0 15px #F5F5F5;
     overflow-y: auto;
@@ -568,67 +572,60 @@ h1 {
     display: inline-block;
     margin: 1px;
     padding: 1px;
-    border-radius: 5px;
-    color: #2d2d2d;
 }
 
-#soft-skills:hover {
+#soft-skills:hover, #bg-soft-skills {
     background-color: #ff827a;
 }
 
-#bg-soft-skills, .soft-skills-highlights {
-    background-color: #ff827a;
+.soft-skills-highlights {
+    border-bottom: 2px solid #ff827a;
 }
 
-#customer-service-specialist:hover {
+#customer-service-specialist:hover, #bg-customer-service-specialist {
     background-color: #fff962;
 }
 
-#bg-customer-service-specialist, .csr-highlights {
-    background-color: #fff962;
+.csr-highlights {
+    border-bottom: 2px solid #9d9800;
 }
 
-#general-virtual-assistant:hover {
+#general-virtual-assistant:hover, #bg-general-virtual-assistant {
     background-color: #ffffff;
     color: #000;
 }
 
-#bg-general-virtual-assistant {
-    background-color: #ffffff;
-}
-
 .gva-highlights {
-    border: 1px solid black;
-    background-color: #efefef;
+    border-bottom: 2px solid #262626;
 }
 
-#executive-virtual-assistant:hover {
+#executive-virtual-assistant:hover, #bg-executive-virtual-assistant {
     background-color: #38b6ff;
 }
 
-#bg-executive-virtual-assistant, .exe-highlights {
-    background-color: #38b6ff;
+.exe-highlights {
+    border-bottom: 2px solid #38b6ff;
 }
 
-#sales-calling:hover {
+#sales-calling:hover, #bg-sales-calling {
     background-color: #00f47e;
 }
 
-#bg-sales-calling, .sales-highlights {
-    background-color: #00f47e;
+.sales-highlights {
+    border-bottom: 2px solid #02c868;
 }
 
-#front-end-web:hover {
+#front-end-web:hover, #bg-front-end {
     background-color: #5a5a5a;
     color: #fff !important;
+}
+
+.front-end-highlights {
+    border-bottom: 2px solid #5a5a5a;
+
 }
 
 .title-container:hover .skill-specific #front-end-title {
-    color: #fff !important;
-}
-
-#bg-front-end, .front-end-highlights {
-    background-color: #5a5a5a;
     color: #fff !important;
 }
 
@@ -700,6 +697,14 @@ h1 {
 
 .modal-containers.night-theme {
     box-shadow: 0 0 15px #272727;
+}
+
+.soft-skills-highlights.night-theme, .csr-highlights.night-theme, .front-end-highlights.night-theme, .gva-highlights.night-theme, .exe-highlights.night-theme, .sales-highlights.night-theme {
+    color: #efefef;
+}
+
+.gva-highlights.night-theme {
+    border-bottom: 2px solid #757575;
 }
 
 .modal-containers.night-theme:hover::-webkit-scrollbar-track {
