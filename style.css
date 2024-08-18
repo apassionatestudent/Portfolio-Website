@@ -296,6 +296,7 @@ nav ul li a {
     border-radius: 50%; 
     object-fit: cover; /* Ensures the image covers the area without distortion */
     border: 3px solid rgb(255, 255, 255); 
+    aspect-ratio: 1 / 1; /* Ensures square aspect ratio */
 }
 
 h1, h2 {
