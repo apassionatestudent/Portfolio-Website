@@ -809,28 +809,35 @@ h1 {
 .contact-routes {
     border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255);
     background-color: #e17d09;
-    cursor: pointer;
     padding: 5px;
     margin: 5px;
+    color: #fff;
+    text-align: left !important;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
 }
 
-.contact-icons, .copy {
+.contact-routes span {
+    color: #fff;
+}
+
+.contact-icons, .contact-linkers {
     border-radius: 5px;
     background-color: #2f3035; color: #efefef;
     padding: 3px;
 }
 
-.copy {
+.contact-linkers {
     margin-left: 0 auto;
     transition: 0.3s;
+    text-align: center;
+    width: 8%;
 }
 
-.copy:hover {
-    background-color: #efefef; color: #2f3035; 
+.contact-linkers:hover {
+    background-color: #efefef; color: #2f3035 !important; 
 }
 
 #ojph-icon {
