@@ -210,14 +210,6 @@ document.querySelectorAll('#sidepanel .nav-selection').forEach(function(link) {
 
 // NAVIGATION SECTIONS ENDS
 
-
-// ABOUT SECTION STARTS
-
-
-
-// ABOUT SECTION ENDS
-
-
 // SKILLS SECTION STARTS
 document.getElementById("skills-container").style.overflow = 'hidden'; // disable the scroll for the said container, it's annoying 
 
@@ -302,43 +294,3 @@ function enableScroll() {
   };
 } 
 // SKILLS SECTIONS ENDS
-
-// HIRE ME SECTION STARTS
-const contacts = {
-  phoneNumber: "(+63) 943-818-4072",
-  email: "ricson.escalicas@gmail.com",
-  skype: "live:.cid.3c3352f6ea6b089b",
-  linkedin: "Ricson Escalicas",
-  facebook: "Ricson Escalicas",
-  ojph: "Ricson Escalicas",
-};
-
-function getContactInfo(platform) {
-  return `${contacts[platform]}`;
-}
-
-function addCopyListener(id, infoType) {
-  const copyButton = document.getElementById(id);
-  copyButton.addEventListener('click', function() {
-
-    document.getElementById("popup-msg").innerHTML = `Copied ${getContactInfo(infoType)} to the clipboard.`;
-    document.getElementById('contact-popup').style.display = 'block';
-  
-    navigator.clipboard.writeText(getContactInfo(infoType))
-      .then(() => {
-          setTimeout(function() {
-          document.getElementById('contact-popup').style.display = 'none';
-        }, 3000);
-      })
-      .catch(err => console.error('Error copying text: ', err));
-  });
-}
-
-addCopyListener('copy-phone', 'phoneNumber');
-addCopyListener('copy-whatsapp', 'phoneNumber');
-addCopyListener('copy-email', 'email');
-addCopyListener('copy-skype', 'skype');
-addCopyListener('copy-linkedin', 'linkedin');
-addCopyListener('copy-facebook', 'facebook');
-addCopyListener('copy-ojph', 'ojph');
-// HIRE ME SECTION ENDS
