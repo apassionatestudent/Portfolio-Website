@@ -456,7 +456,8 @@ h1 {
     height: 75vh;
     width: 90%;
     border-radius: 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); 
+    background-color: #f5f5f5;
+    /*background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));  */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5); 
 }
 
@@ -477,7 +478,7 @@ h1 {
     display: grid;
     place-items: center;
     padding: 10px;
-    border: 1px solid #fff;
+    border: 1px solid #c8c8c8;
     border-bottom: none;
     height: 75vh;
     width: 50%; 
@@ -827,6 +828,12 @@ h1 {
     border-radius: 5px;
     background-color: #2f3035; color: #efefef;
     padding: 3px;
+}
+
+.contact-icons {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
 }
 
 .contact-linkers {
